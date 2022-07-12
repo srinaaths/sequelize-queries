@@ -1,4 +1,5 @@
 const Sequelize = require('sequelize')
+const { Op } = require('sequelize')
 const Hapi = require('hapi')
 
 const server = new Hapi.Server()
@@ -143,7 +144,7 @@ const sample = async (req, reply) => {
     }
 }
 
-const q10 = async(req, reply) => {
+const q10 = async (req, reply) => {
     try {
         const [result, metadata] = await sequelize.query('SELECT movie.name, movie_actor.role from movie JOIN movie_actor ON (movie.id = movie_actor."movieId") WHERE movie_actor."actorId" = (SELECT id from actor where name = :name)', {
             replacements: {
@@ -156,7 +157,7 @@ const q10 = async(req, reply) => {
     }
 }
 
-const getMoviesByDirector = async(req, reply) => {
+const getMoviesByDirector = async (req, reply) => {
     try {
         const [result, metadata] = await sequelize.query('SELECT movie.name from movie JOIN director on (movie."directorId" = director.id) where movie."directorId" = (SELECT id from director where name = :name)', {
             replacements: {
@@ -169,7 +170,7 @@ const getMoviesByDirector = async(req, reply) => {
     }
 }
 
-const getMoviesByGenre = async(req, reply) => {
+const getMoviesByGenre = async (req, reply) => {
     try {
         const [result, metadata] = await sequelize.query('SELECT movie.name from movie JOIN movie_genre ON (movie.id = movie_genre."movieId") WHERE movie_genre."genreId" = (SELECT id from genre WHERE name = :name)', {
             replacements: {
@@ -182,14 +183,16 @@ const getMoviesByGenre = async(req, reply) => {
     }
 }
 
-const getMoviesByGenre2 = async(req, reply) => {
+const getMoviesByGenre2 = async (req, reply) => {
     try {
         const data = await movie.findAll({
+            attributes: ['name'],
             include: {
                 model: genre,
                 where: {
                     name: req.params.name
-                }
+                },
+                attributes: ['name']
             }
         })
         reply(data)
@@ -197,6 +200,70 @@ const getMoviesByGenre2 = async(req, reply) => {
         console.log(error);
     }
 }
+
+const getMoviesByDirector2 = async (req, reply) => {
+    try {
+        const data = await movie.findAll({
+            attributes: ['name'],
+            include: {
+                model: director,
+                where: {
+                    name: req.params.name
+                },
+                attributes: ['name']
+            }
+        })
+        reply(data)
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const bestReviewByMovie = async (req, reply) => {
+    try {
+        const data = await rating.findAll({
+            include: {
+                model: movie,
+                where: {
+                    name: req.params.name
+                }
+            },
+            order: [['rating', 'ASC']],
+            limit: 1
+        })
+        reply(data)
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const hitMoviesByActor = async (req, reply) => {
+    try {
+        const data = await movie.findAll({
+            attributes: ['name'],
+            include: [{
+                model: actor,
+                required: true,
+                attributes: ['name'],
+                where: {
+                    name: req.params.name,
+                },
+            }, {
+                    model: rating,
+                    required: true,
+                    where: {
+                        rating: {
+                            [Op.gt]: 7
+                        }
+                    }
+            }]
+        })
+        reply(data)
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 sequelize.sync({ alter: true })
     .then(() => {
     })
@@ -222,9 +289,17 @@ server.route([{
 }, {
     method: 'GET',
     path: '/getMoviesByDirector/{name}',
-    handler: getMoviesByDirector
-},{
+    handler: getMoviesByDirector2
+}, {
     method: 'GET',
     path: '/getMoviesByGenre/{name}',
     handler: getMoviesByGenre2
+}, {
+    method: 'GET',
+    path: '/bestReviewByMovie/{name}',
+    handler: bestReviewByMovie
+}, {
+    method: 'GET',
+    path: '/hitMoviesByActor/{name}',
+    handler: hitMoviesByActor
 }])
