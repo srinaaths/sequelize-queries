@@ -249,16 +249,103 @@ const hitMoviesByActor = async (req, reply) => {
                     name: req.params.name,
                 },
             }, {
-                    model: rating,
-                    required: true,
-                    where: {
-                        rating: {
-                            [Op.gt]: 7
-                        }
+                model: rating,
+                required: true,
+                where: {
+                    rating: {
+                        [Op.gt]: 7
                     }
+                }
             }]
         })
         reply(data)
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const worstRatedMovie2 = async (req, reply) => {
+    try {
+        console.log('called');
+        const data = await rating.findAll({
+            attributes: [[sequelize.fn('AVG', sequelize.col('rating')), 'avg_rating']],
+            include: {
+                model: movie,
+                required: true
+                // where: {
+                //     rating: {
+                //         [Op.lt]: 5
+                //     }
+                // },
+            },
+            group: ['rating']
+        })
+        reply(data)
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const worstRatedMovie = async (req, reply) => {
+    try {
+        const [result, metadata] = await sequelize.query('SELECT movie.name, AVG(rating.rating) from movie JOIN rating ON (movie.id = rating."movieId") GROUP BY movie.name ORDER BY AVG(rating.rating)')
+        reply(result)
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const allMoviesByActor = async (req, reply) => {
+    try {
+        const data = await actor.findAll({
+            include: {
+                model: movie,
+                required: true
+            },
+            where: {
+                name: req.params.name
+            }
+        })
+        reply(data);
+    } catch (error) {
+
+    }
+}
+
+const movieCast = async (req, reply) => {
+    try {
+        const data = await movie.findAll({
+            include: {
+                model: actor,
+            },
+            where: {
+                name: req.params.name
+            }
+
+        })
+        reply(data)
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const moviesCountByDirectorByGenre = async(req, reply) => {
+    try {
+        const [result, metadata] = await sequelize.query('SELECT genre.name, COUNT(movie.name) from movie JOIN director ON (movie."directorId" = director.id) JOIN movie_genre ON (movie.id = movie_genre."movieId") JOIN genre ON (movie_genre."genreId" = genre.id) WHERE movie."directorId" = ( SELECT id from director WHERE name = :name ) GROUP BY genre.name;', {
+            replacements: {
+                name: req.params.name
+            }
+        });
+        reply(result)
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const directorFlops = async(req, reply) => {
+    try {
+    const [result, metadata] = await sequelize.query('SELECT director.name, COUNT(director.name) from ( select rating."movieId", avg(rating.rating) , movie.name from rating join movie on (movie.id = rating."movieId") group by rating."movieId", movie.name having avg(rating.rating) < 6 order by avg(rating.rating) ) as intermediate_table JOIN movie on(intermediate_table."movieId" = movie.id) JOIN director ON (movie."directorId" = director.id)  GROUP BY director.name ORDER BY COUNT(director.name) DESC');
+    reply(result)
     } catch (error) {
         console.log(error);
     }
@@ -302,4 +389,27 @@ server.route([{
     method: 'GET',
     path: '/hitMoviesByActor/{name}',
     handler: hitMoviesByActor
-}])
+}, {
+    method: 'GET',
+    path: '/worstRatedMovie',
+    handler: worstRatedMovie
+}, {
+    method: 'GET',
+    path: '/allMoviesByActor/{name}',
+    handler: allMoviesByActor
+}, {
+    method: 'GET',
+    path: '/movieCast/{name}',
+    handler: movieCast
+}, {
+    method: 'GET',
+    path: '/moviesCountByDirectorByGenre/{name}',
+    handler: moviesCountByDirectorByGenre
+},
+{
+    method: 'GET',
+    path: '/directorFlops',
+    handler: directorFlops
+}
+
+])
