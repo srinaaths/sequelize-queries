@@ -1,0 +1,10 @@
+insert into director ("id", "name") values (1, 'Gothart');
+insert into director ("id", "name") values (2, 'Shannen');
+insert into director ("id", "name") values (3, 'Finley');
+insert into director ("id", "name") values (4, 'Ev');
+insert into director ("id", "name") values (5, 'Lark');
+insert into director ("id", "name") values (6, 'Biddie');
+insert into director ("id", "name") values (7, 'Shaine');
+insert into director ("id", "name") values (8, 'Alfonse');
+insert into director ("id", "name") values (9, 'Leshia');
+insert into director ("id", "name") values (10, 'Demetre');

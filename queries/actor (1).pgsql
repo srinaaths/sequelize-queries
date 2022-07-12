@@ -1,0 +1,10 @@
+insert into actor ("id", "name") values (1, 'Beck');
+insert into actor ("id", "name") values (2, 'Arman');
+insert into actor ("id", "name") values (3, 'Vince');
+insert into actor ("id", "name") values (4, 'Clare');
+insert into actor ("id", "name") values (5, 'Lutero');
+insert into actor ("id", "name") values (6, 'Merrielle');
+insert into actor ("id", "name") values (7, 'Arlee');
+insert into actor ("id", "name") values (8, 'Kissie');
+insert into actor ("id", "name") values (9, 'Harli');
+insert into actor ("id", "name") values (10, 'Derwin');
