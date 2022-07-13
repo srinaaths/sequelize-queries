@@ -13,20 +13,25 @@ const getAllMovies = async (req, reply) => {
 
 const getCountByGenre = async (req, reply) => {
     try {
-        const data = await movie.findAll({
-            attributes: ['movie.name', 'genre.id'],
-            include: {
-                model: genre,
-                required: true,
-                attributes: ['id'],
-                through: {
-                    attributes: ['genreId'],
-                    group: ['genreId']
-                }
-            },
-            group: ['movie.name', 'genre.id']
-        })
-        reply(data)
+        // const data = await movie.findAll({
+        //     attributes: ['movie.name', 'genre.id'],
+        //     include: {
+        //         model: genre,
+        //         required: true,
+        //         attributes: ['id'],
+        //         through: {
+        //             attributes: ['genreId'],
+        //             group: ['genreId']
+        //         }
+        //     },
+        //     group: ['movie.name', 'genre.id']
+        // })
+        // reply(data)
+        // const data = await genre.findAll({
+        //     attributes: [[sequelize.fn('count', sequelize.col('')), 'counttt']],
+        //     group: ['id']
+        // })
+        // reply(data)
     } catch (error) {
         reply(error.message);
     }
@@ -278,7 +283,10 @@ const deleteMovie = async (req, reply) => {
                 id: req.params.id
             }
         })
-        reply('deleted')
+        if(!result)
+            reply('movie not found')
+        else 
+            reply('deleted')
     } catch (error) {
         reply(error.message);
     }
@@ -290,7 +298,7 @@ const updateMovie = async(req, reply) => {
             req.payload,
         {
             where: {
-                id: req.payload.id
+                id: req.params.id
             }
         }
         )
@@ -332,6 +340,7 @@ const addRating = async(req, reply) => {
         const data = await rating.create(req.payload);
         reply('rating added')
     } catch (error) {
+        console.log(error);
         reply(error.message);
     }
 }
@@ -356,4 +365,57 @@ const addMovieActor = async (req, reply) => {
     }
 }
 
-module.exports = {getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser, addMovieGenre, addMovieActor}
+const deleteActor = async (req, reply) => {
+    try {
+        const data = await actor.findOne({
+            where: {
+                id: req.params.id
+            }
+        })
+        if(data) {
+            actor.destroy({
+                where: {
+                    id: req.params.id
+                }
+            })
+            reply('deleted')
+        }
+        else 
+            reply('no actor found')
+    } catch (error) {
+        reply(error.message)
+    }
+}
+
+const deleteRating = async (req, reply) => {
+    try {
+        const result = await rating.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        if(result) {
+            reply("deleted")
+        }
+        else {
+            reply('not record found')
+        }
+    } catch (error) {
+        reply(error.message)
+    }
+}
+
+const updateRating = async (req, reply) => {
+    try {
+        const data = await rating.update(req.payload, {
+            where: {
+                id: req.params.id
+            }
+        })
+        reply('updated')
+    } catch (error) {
+        reply(error.message)
+    }
+}
+
+module.exports = {getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating}

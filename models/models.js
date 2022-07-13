@@ -102,7 +102,6 @@ const user = sequelize.define('user', {
     name: {
         type: Sequelize.DataTypes.STRING,
         allowNull: false
-
     }
 })
 
@@ -126,7 +125,7 @@ const init = () => {
 
 init();
 
-sequelize.sync({ force: true })
+sequelize.sync({ alter: true })
     .then(() => {
         console.log('syncing');
     })
