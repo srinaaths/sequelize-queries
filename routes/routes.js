@@ -1,4 +1,7 @@
 const {getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating} = require('../controllers/controllers.js')
+const {idValidator, nameValidator} = require('../validation.js')
+
+const Joi = require('@hapi/joi')
 
 module.exports = [{
     method: 'GET',
@@ -15,7 +18,12 @@ module.exports = [{
 }, {
     method: 'GET',
     path: '/q10/{name}',
-    handler: q10
+    config: {
+        handler: q10,
+        validate: {
+            params: nameValidator
+        }
+    }
 }, {
     method: 'GET',
     path: '/getMoviesByDirector/{name}',
