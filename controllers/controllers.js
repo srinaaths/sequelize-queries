@@ -340,9 +340,20 @@ const addRating = async(req, reply) => {
 
 const addMovieGenre = async (req, reply) => {
     try {
+        const data = await movie_genre.create(req.payload);
+        reply('added')
     } catch (error) {
         reply(error.message)
     }
 }
 
-module.exports = {getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser}
+const addMovieActor = async (req, reply) => {
+    try {
+        const data = await movie_actor.create(req.payload);
+        reply('added')
+    } catch (error) {
+        reply(error.message)
+    }
+}
+
+module.exports = {getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser, addMovieGenre, addMovieActor}

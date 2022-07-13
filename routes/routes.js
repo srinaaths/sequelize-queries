@@ -1,4 +1,4 @@
-const {getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser} = require('../controllers/controllers.js')
+const {getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser, addMovieGenre, addMovieActor} = require('../controllers/controllers.js')
 
 module.exports = [{
     method: 'GET',
@@ -93,5 +93,15 @@ module.exports = [{
     method: 'POST',
     path: '/addrating',
     handler: addRating
+},
+{
+    method: 'POST',
+    path: '/addmoviegenre',
+    handler: addMovieGenre
+},
+{
+    method: 'POST',
+    path: '/addmovieactor',
+    handler: addMovieActor
 }
 ]
