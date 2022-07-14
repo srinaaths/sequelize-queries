@@ -207,9 +207,12 @@ const worstRatedMovie2 = async (req, reply) => {
 
 const worstRatedMovie = async (req, reply) => {
     try {
+        logger.info('worstRatedMovie called')
         const [result, metadata] = await sequelize.query('SELECT movie.name, AVG(rating.rating) from movie JOIN rating ON (movie.id = rating."movieId") GROUP BY movie.name ORDER BY AVG(rating.rating)')
+        logger.info('worstRatedMovie success')
         reply(result)
     } catch (error) {
+        logger.error('worstRatedMovie failed')
         reply(error.message);
     }
 }
