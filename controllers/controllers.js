@@ -41,7 +41,8 @@ const getAllMoviesCached = async (req, reply) => {
         else {
             console.log('not found in cache');
             const data = await movie.findAll()
-            const saveResult = await client.set('movies', JSON.stringify(data));
+            const saveResult = await client.setEx('movies',10,JSON.stringify(data));
+            console.log(saveResult);
             console.log('added in cache');
             logger.info('got all movies')
             reply(data)
