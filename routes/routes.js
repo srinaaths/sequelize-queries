@@ -1,7 +1,7 @@
 const {getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating} = require('../controllers/controllers.js')
 const {idValidator, nameValidator} = require('../validation.js')
 
-const Joi = require('@hapi/joi')
+// const Joi = require('@hapi/joi')
 
 module.exports = [{
     method: 'GET',
@@ -27,36 +27,77 @@ module.exports = [{
 }, {
     method: 'GET',
     path: '/getMoviesByDirector/{name}',
-    handler: getMoviesByDirector2
+    config: {
+        handler: getMoviesByDirector2,
+        validate: {
+            params: nameValidator
+        }
+    }
 }, {
     method: 'GET',
     path: '/getMoviesByGenre/{name}',
-    handler: getMoviesByGenre2
+    config: {
+        handler: getMoviesByGenre2,
+        validate: {
+            params: nameValidator
+        }
+    }
 }, {
     method: 'GET',
     path: '/bestReviewByMovie/{name}',
-    handler: bestReviewByMovie
+    config: {
+        handler: bestReviewByMovie,
+        validate: {
+            params: nameValidator
+        }
+    }
 }, {
     method: 'GET',
     path: '/hitMoviesByActor/{name}',
-    handler: hitMoviesByActor
+    config: {
+        handler: hitMoviesByActor,
+        validate: {
+            params: nameValidator
+        }
+    }
 }, {
     method: 'GET',
     path: '/worstRatedMovie',
     // handler: worstRatedMovie
-    handler: worstRatedMovie2
+    config: {
+        handler: worstRatedMovie2,
+        validate: {
+            params: nameValidator
+        }
+    }
 }, {
     method: 'GET',
     path: '/allMoviesByActor/{name}',
-    handler: allMoviesByActor
+    config: {
+        handler: allMoviesByActor,
+        validate: {
+            params: nameValidator
+        }
+    }
 }, {
     method: 'GET',
     path: '/movieCast/{name}',
-    handler: movieCast
+    config: {
+        handler: movieCast,
+        validate: {
+            params: nameValidator
+        }
+    }
+
 }, {
     method: 'GET',
     path: '/moviesCountByDirectorByGenre/{name}',
-    handler: moviesCountByDirectorByGenre
+    config: {
+        handler: moviesCountByDirectorByGenre,
+        validate: {
+            params: nameValidator
+        }
+    }
 },
 {
     method: 'GET',
@@ -74,11 +115,21 @@ module.exports = [{
 {
     method: 'DELETE',
     path: '/deletemovie/{id}',
-    handler: deleteMovie
+    config: {
+        handler: deleteMovie,
+        validate: {
+            params: idValidator
+        }
+    }
 }, {
     method: 'PUT',
     path: '/updatemovie/{id}',
-    handler: updateMovie
+    config: {
+        handler: updateMovie,
+        validate: {
+            params: idValidator
+        }
+    }
 }, {
     method: 'POST',
     path: '/addactor',
@@ -88,11 +139,12 @@ module.exports = [{
     path: '/adddirector',
     handler: addDirector
 },
-{
-    method: 'GET',
-    path: '/updatemovie/{id}',
-    handler: updateMovie
-}, {
+// {
+//     method: 'PUT',
+//     path: '/updatemovie/{id}',
+//     handler: updateMovie
+// },
+ {
     method: 'POST',
     path: '/adduser',
     handler: addUser
@@ -115,14 +167,29 @@ module.exports = [{
 {
     method: 'DELETE',
     path: '/deleteactor/{id}',
-    handler: deleteActor
+    config: {
+        handler: deleteActor,
+        validate: {
+            params: idValidator
+        }
+    }
 }, {
     method: 'DELETE',
     path: '/deleterating/{id}',
-    handler: deleteRating
+    config: {
+        handler: deleteRating,
+        validate: {
+            params: idValidator
+        }
+    }
 }, {
     method: 'PUT',
     path: '/updaterating/{id}',
-    handler: updateRating
+    config: {
+        handler: updateRating,
+        validate: {
+            params: idValidator
+        }
+    }
 }
 ]

@@ -53,6 +53,7 @@ const sample = async (req, reply) => {
 
 const q10 = async (req, reply) => {
     try {
+        console.log('q10 called');
         const [result, metadata] = await sequelize.query('SELECT movie.name, movie_actor.role from movie JOIN movie_actor ON (movie.id = movie_actor."movieId") WHERE movie_actor."actorId" = (SELECT id from actor where name = :name)', {
             replacements: {
                 name: req.params.name
