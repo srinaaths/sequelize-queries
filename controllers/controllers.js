@@ -64,6 +64,30 @@ const getAllMovies = async (req, reply) => {
     }
 }
 
+const getMovieById = async (req, reply) => {
+    try {
+        const {id} = req.params;
+        const cachedData = await client.get(`movie${id}`)
+        if(cachedData) {
+            console.log('cache hit');
+            reply(JSON.parse(cachedData))
+        }
+        else {
+            console.log('cache miss');
+            const data = await movie.findOne({
+                where: {
+                    id: id
+                }
+            })
+            const result = await client.setEx(`movie${id}`, 5, JSON.stringify(data))
+            console.log('added to cache');
+            reply(data)
+        }
+    } catch (error) {
+        reply(error.message)
+    }
+}
+
 const getCountByGenre = async (req, reply) => {
     try {
         // const data = await movie.findAll({
@@ -552,4 +576,4 @@ const updateRating = async (req, reply) => {
     }
 }
 
-module.exports = {getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating, getAllMoviesCached}
+module.exports = {getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating, getAllMoviesCached, getMovieById}

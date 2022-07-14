@@ -1,16 +1,24 @@
-const {getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating, getAllMoviesCached} = require('../controllers/controllers.js')
+const {getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating, getAllMoviesCached, getMovieById} = require('../controllers/controllers.js')
 const {idValidator, nameValidator} = require('../validation.js')
 
 const logger = require('../logger/logger.js')
 
 // const Joi = require('@hapi/joi')
 
-module.exports = [{
+module.exports = [
+    {
     method: 'GET',
     path: '/',
     // handler: getAllMovies,
     handler: getAllMoviesCached,
-}, {
+}, 
+    {
+    method: 'GET',
+    path: '/{id}',
+    // handler: getAllMovies,
+    handler: getMovieById,
+}, 
+{
     method: 'GET',
     path: '/findCountByGenre',
     handler: getCountByGenre
@@ -67,12 +75,7 @@ module.exports = [{
     method: 'GET',
     path: '/worstRatedMovie',
     // handler: worstRatedMovie
-    config: {
-        handler: worstRatedMovie2,
-        validate: {
-            params: nameValidator
-        }
-    }
+    handler: worstRatedMovie2,
 }, {
     method: 'GET',
     path: '/allMoviesByActor/{name}',

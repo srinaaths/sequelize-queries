@@ -26,3 +26,29 @@
 2022-07-14T09:47:19.212Z info got all movies
 2022-07-14T09:47:35.175Z info got all movies
 2022-07-14T09:47:50.106Z info got all movies
+2022-07-14T09:52:18.659Z info getMoviesByDirector called
+2022-07-14T09:52:18.685Z info getMoviesByDirector failed
+2022-07-14T09:52:21.791Z info bestReviewByMovie called
+2022-07-14T09:52:21.816Z info bestReviewByMovie success
+2022-07-14T09:52:25.548Z info hitMoviesByActor called
+2022-07-14T09:52:25.573Z info hitMoviesByActor success
+2022-07-14T09:52:56.807Z info movieCast called
+2022-07-14T09:52:56.832Z info movieCast success
+2022-07-14T09:53:33.236Z info worstRatedMovie called
+2022-07-14T09:53:33.251Z info worstRatedMovie success
+2022-07-14T09:53:35.961Z info movieCast called
+2022-07-14T09:53:35.972Z info movieCast success
+2022-07-14T09:53:38.729Z info allMoviesByActor called
+2022-07-14T09:53:38.747Z info allMoviesByActor success
+2022-07-14T09:53:40.893Z info moviesCountByDirectorByGenre called
+2022-07-14T09:53:40.917Z info moviesCountByDirectorByGenre success
+2022-07-14T09:53:44.450Z info directorFlops called
+2022-07-14T09:53:44.464Z info directorFlops success
+2022-07-14T09:53:46.392Z info directorFlops called
+2022-07-14T09:53:46.399Z info directorFlops success
+2022-07-14T09:58:41.447Z info addMovie called
+2022-07-14T09:58:41.475Z info addMovie success
+2022-07-14T09:58:45.607Z info addMovies called
+2022-07-14T09:58:45.624Z info addMovies success
+2022-07-14T09:58:48.779Z info deleteMovie called
+2022-07-14T09:58:48.787Z info deleteMovie record not found
