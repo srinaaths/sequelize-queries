@@ -1,0 +1,6 @@
+2022-07-14T05:28:53.895Z info got all movies
+2022-07-14T05:29:50.184Z info got all movies
+2022-07-14T06:05:43.350Z info deleteRating called
+2022-07-14T06:05:43.360Z info deleteRating record not found
+2022-07-14T06:05:59.947Z info deleteRating called
+2022-07-14T06:05:59.954Z warn deleteRating record not found
