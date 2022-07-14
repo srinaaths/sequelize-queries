@@ -1,14 +1,12 @@
-const {nameValidator, idValidator} = require("./validation.js")
+const { createClient } = require('redis');
 
-// const {error, value} = nameValidator.validate({name: "dlskfjl()k"})
+const client = createClient();
 
-// if(error)
-//     console.log(error);
-// else
-//     console.log(value);
+client.on('error', (err) => console.log('Redis Client Error', err));
 
-const {error, value} = idValidator.validate({id: "34fsad2"})
-if(error)
-console.log(error);
-else 
-console.log(value);
+const connect = async() => await client.connect();
+
+connect();
+
+client.set('key', 'value');
+const value = client.get('key');

@@ -2,6 +2,56 @@ const {movie, user, actor, director, movie_actor, movie_genre, rating, genre, se
 const {Op} = require('sequelize')
 const logger = require('../logger/logger.js')
 
+// const Redis = require('redis')
+// const {promisify} = require('util')
+
+// const client = Redis.createClient({
+//     host: '127.0.0.1',
+//     port: 6379
+// })
+
+// client.connect()
+// .then(() => console.log('connected'))
+// .catch((err) => console.log(err))
+
+// const GET_ASYNC = promisify(client.get).bind(client)
+// const SET_ASYNC = promisify(client.set).bind(client)
+
+
+const { createClient } = require('redis');
+
+const client = createClient();
+
+client.on('error', (err) => console.log('Redis Client Error', err));
+
+const connect = async() => await client.connect();
+
+connect();
+
+// client.set('key', 'value');
+// const value = client.get('key');
+
+const getAllMoviesCached = async (req, reply) => {
+    try {
+        const cachedResponse = await client.get('movies')
+        if(cachedResponse) {
+            console.log('got using cache');
+            reply(JSON.parse(cachedResponse))
+        }
+        else {
+            console.log('not found in cache');
+            const data = await movie.findAll()
+            const saveResult = await client.set('movies', JSON.stringify(data));
+            console.log('added in cache');
+            logger.info('got all movies')
+            reply(data)
+        }
+    } catch (error) {
+        logger.error('error fetching movies')
+        reply(error.message);
+    }
+}
+
 const getAllMovies = async (req, reply) => {
     try {
         const data = await movie.findAll()
@@ -501,4 +551,4 @@ const updateRating = async (req, reply) => {
     }
 }
 
-module.exports = {getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating}
+module.exports = {getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating, getAllMoviesCached}

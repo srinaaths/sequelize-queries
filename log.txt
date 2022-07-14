@@ -4,3 +4,10 @@
 2022-07-14T06:05:43.360Z info deleteRating record not found
 2022-07-14T06:05:59.947Z info deleteRating called
 2022-07-14T06:05:59.954Z warn deleteRating record not found
+2022-07-14T09:18:42.791Z info got all movies
+2022-07-14T09:26:09.456Z info got all movies
+2022-07-14T09:27:36.385Z error error fetching movies
+2022-07-14T09:27:43.855Z error error fetching movies
+2022-07-14T09:27:55.991Z error error fetching movies
+2022-07-14T09:28:33.206Z info got all movies
+2022-07-14T09:28:55.263Z info got all movies
