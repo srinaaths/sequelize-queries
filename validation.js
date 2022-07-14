@@ -1,4 +1,3 @@
-// const Joi = require('@hapi/joi')
 const Joi = require('joi')
 
 const idValidator = Joi.object({
