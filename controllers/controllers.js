@@ -84,19 +84,23 @@ const getMoviesByDirector = async (req, reply) => {
 
 const getMoviesByGenre = async (req, reply) => {
     try {
+        logger.info('getMoviesByGenre called')
         const [result, metadata] = await sequelize.query('SELECT movie.name from movie JOIN movie_genre ON (movie.id = movie_genre."movieId") WHERE movie_genre."genreId" = (SELECT id from genre WHERE name = :name)', {
             replacements: {
                 name: req.params.name
             }
         })
+        logger.info('getMoviesByGenre success')
         reply(result);
     } catch (error) {
+        logger.error('getMoviesByGenre failed')
         reply(error.message);
     }
 }
 
 const getMoviesByGenre2 = async (req, reply) => {
     try {
+        logger.info('getMoviesByDirector called')
         const data = await movie.findAll({
             attributes: ['name'],
             include: {
@@ -110,12 +114,14 @@ const getMoviesByGenre2 = async (req, reply) => {
         logger.info('getMoviesByGenre succesful')
         reply(data)
     } catch (error) {
+        logger.error('getMoviesByDirector failed')
         reply(error.message);
     }
 }
 
 const getMoviesByDirector2 = async (req, reply) => {
     try {
+        logger.info('getMoviesByDirector called')
         const data = await movie.findAll({
             attributes: ['name'],
             include: {
@@ -126,15 +132,17 @@ const getMoviesByDirector2 = async (req, reply) => {
                 attributes: ['name']
             }
         })
-        logger.info('getMoviesByDirector called')
+        logger.info('getMoviesByDirector failed')
         reply(data)
     } catch (error) {
+        logger.error('getMoviesByDirector failed')
         reply(error.message);
     }
 }
 
 const bestReviewByMovie = async (req, reply) => {
     try {
+        logger.info('bestReviewByMovie called')
         const data = await rating.findAll({
             include: {
                 model: movie,
@@ -148,6 +156,7 @@ const bestReviewByMovie = async (req, reply) => {
         logger.info('bestReviewByMovie success')
         reply(data)
     } catch (error) {
+        logger.error('bestReviewByMovie failed')
         reply(error.message);
     }
 }
