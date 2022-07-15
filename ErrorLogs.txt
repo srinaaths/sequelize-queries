@@ -1,1 +1,2 @@
 2022-07-15T10:28:09.033Z error addMovie failed
+2022-07-15T11:18:34.537Z error worstRatedMovie failed

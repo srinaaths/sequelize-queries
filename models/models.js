@@ -22,6 +22,15 @@ const movie = sequelize.define('movie', {
 }, {
     freezeTableName: true,
     timestamps: false
+}, {
+    hooks: {
+        beforeUpdate: function() {
+            console.log('before update');
+        },
+        afterUpdate: function () {
+            console.log('after update');
+        }
+    }
 })
 
 const director = sequelize.define('director', {

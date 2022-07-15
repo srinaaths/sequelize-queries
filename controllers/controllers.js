@@ -288,19 +288,29 @@ const hitMoviesByActor = async (req, reply) => {
 const worstRatedMovie2 = async (req, reply) => {
     try {
         logger.info('worstRatedMovie called')
-        const result = await rating.findAll({
-            attributes: ['movieId', [sequelize.fn('AVG', sequelize.col('rating')), 'avg_rating']],
-            include: {
-                attributes: [],
-                required: true,
-                model: movie,
-            },
-            group: ['movieId'],
-            order: [[sequelize.fn('AVG', sequelize.col('rating')), 'ASC']],
-            limit: 1,
-        })
-        logger.info('worstRatedMovie success')
-        reply(result)
+        const cachedData = await client.get('worstRatedMovie')
+        if (cachedData) {
+            logger.info('cache hit')
+            reply(JSON.parse(cachedData))
+        }
+        else {
+            logger.info('cache miss')
+            const result = await rating.findAll({
+                attributes: ['movieId', [sequelize.fn('AVG', sequelize.col('rating')), 'avg_rating']],
+                include: {
+                    attributes: [],
+                    required: true,
+                    model: movie,
+                },
+                group: ['movieId'],
+                order: [[sequelize.fn('AVG', sequelize.col('rating')), 'ASC']],
+                limit: 1,
+            })
+            const cacheData = await client.setEx('worstRatedMovie', 1200, JSON.stringify(result));
+            logger.info('added to cache')
+            logger.info('worstRatedMovie success')
+            reply(result)
+        }
     }
     catch (error) {
         logger.error('worstRatedMovie failed')
@@ -595,4 +605,4 @@ const updateRating = async (req, reply) => {
     }
 }
 
-module.exports = { getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating, getAllMoviesCached, getMovieById, getAllMoviesByPages}
+module.exports = { getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating, getAllMoviesCached, getMovieById, getAllMoviesByPages }

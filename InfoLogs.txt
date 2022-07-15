@@ -20,3 +20,18 @@
 2022-07-15T11:02:23.395Z info got all movies
 2022-07-15T11:02:41.562Z info got all movies
 2022-07-15T11:04:26.977Z info got all movies
+2022-07-15T11:18:34.524Z info worstRatedMovie called
+2022-07-15T11:18:34.528Z info cache miss
+2022-07-15T11:18:34.537Z error worstRatedMovie failed
+2022-07-15T11:20:03.559Z info worstRatedMovie called
+2022-07-15T11:20:03.562Z info cache miss
+2022-07-15T11:20:03.570Z info added to cache
+2022-07-15T11:20:03.571Z info worstRatedMovie success
+2022-07-15T11:20:06.553Z info worstRatedMovie called
+2022-07-15T11:20:06.559Z info cache hit
+2022-07-15T11:20:07.228Z info worstRatedMovie called
+2022-07-15T11:20:07.231Z info cache hit
+2022-07-15T11:20:07.626Z info worstRatedMovie called
+2022-07-15T11:20:07.647Z info cache hit
+2022-07-15T11:20:28.534Z info worstRatedMovie called
+2022-07-15T11:20:28.540Z info cache hit
