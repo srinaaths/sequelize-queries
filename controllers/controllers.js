@@ -2,22 +2,6 @@ const { movie, user, actor, director, movie_actor, movie_genre, rating, genre, s
 const { Op } = require('sequelize')
 const logger = require('../logger/logger.js')
 
-// const Redis = require('redis')
-// const {promisify} = require('util')
-
-// const client = Redis.createClient({
-//     host: '127.0.0.1',
-//     port: 6379
-// })
-
-// client.connect()
-// .then(() => console.log('connected'))
-// .catch((err) => console.log(err))
-
-// const GET_ASYNC = promisify(client.get).bind(client)
-// const SET_ASYNC = promisify(client.set).bind(client)
-
-
 const { createClient } = require('redis');
 
 const client = createClient();
@@ -28,8 +12,19 @@ const connect = async () => await client.connect();
 
 connect();
 
-// client.set('key', 'value');
-// const value = client.get('key');
+const getAllMoviesByPages = async (req, reply) => {
+    try {
+        console.log(req.query.page);
+        const page = req.query.page;
+        const limit = req.query.limit;
+        const result = await movie.findAll();
+        const startIndex = (page - 1) * limit;
+        const endIndex = (page) * limit;
+        reply(result.slice(startIndex, endIndex))
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 const getAllMoviesCached = async (req, reply) => {
     try {
@@ -95,7 +90,7 @@ const getCountByGenre = async (req, reply) => {
         //     include: {
         //         model: genre,
         //         required: true,
-        //         attributes: ['id'],
+        //         attributes: [],
         //         through: {
         //             attributes: ['genreId'],
         //             group: ['genreId']
@@ -103,12 +98,13 @@ const getCountByGenre = async (req, reply) => {
         //     },
         //     group: ['movie.name', 'genre.id']
         // })
-        // reply(data)
+        c
+        reply(data)
         // const data = await genre.findAll({
         //     attributes: [[sequelize.fn('count', sequelize.col('')), 'counttt']],
         //     group: ['id']
         // })
-        // reply(data)
+        reply(data)
     } catch (error) {
         reply(error.message);
     }
@@ -176,10 +172,9 @@ const getMoviesByGenre = async (req, reply) => {
 const getMoviesByGenre2 = async (req, reply) => {
     try {
         logger.info('getMoviesByDirector called')
-        const { movieGenre } = req.params;
+        const movieGenre = req.params.name;
         const cachedData = await client.get(`moviesByGenre-${movieGenre}`);
         if (cachedData) {
-            console.log('cache hit');
             logger.info('cache hit');
             reply(JSON.parse(cachedData));
         }
@@ -209,18 +204,30 @@ const getMoviesByGenre2 = async (req, reply) => {
 const getMoviesByDirector2 = async (req, reply) => {
     try {
         logger.info('getMoviesByDirector called')
-        const data = await movie.findAll({
-            attributes: ['name'],
-            include: {
-                model: director,
-                where: {
-                    name: req.params.name
-                },
-                attributes: ['name']
-            }
-        })
-        logger.info('getMoviesByDirector failed')
-        reply(data)
+        const directorName = req.params.name;
+        const cachedData = await client.get(`moviesByDirector-${directorName}`)
+        if (cachedData) {
+            logger.info('cache hit')
+            reply(JSON.parse(cachedData))
+        }
+        else {
+            logger.info('cache miss')
+            const data = await movie.findAll({
+                attributes: ['name'],
+                include: {
+                    model: director,
+                    attributes: [],
+                    where: {
+                        name: req.params.name
+                    },
+                }
+            })
+            client.setEx(`moviesByDirector-${directorName}`, 1200, JSON.stringify(data))
+
+            logger.info('cached')
+            logger.info('getMoviesByDirector success')
+            reply(data)
+        }
     } catch (error) {
         logger.error('getMoviesByDirector failed')
         reply(error.message);
@@ -588,4 +595,4 @@ const updateRating = async (req, reply) => {
     }
 }
 
-module.exports = { getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating, getAllMoviesCached, getMovieById }
+module.exports = { getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating, getAllMoviesCached, getMovieById, getAllMoviesByPages}

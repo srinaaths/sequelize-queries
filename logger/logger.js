@@ -10,7 +10,9 @@ const logConfig = {
         winston.format.timestamp(), customLogFormat
     ),
     transports: [
-        new winston.transports.File({filename: 'log.txt', level: 'debug'})
+        new winston.transports.File({filename: 'ErrorLogs.txt', level: 'error'}),
+        new winston.transports.File({filename: 'InfoLogs.txt', level: 'info'}),
+        new winston.transports.Console()
     ]
 }
 

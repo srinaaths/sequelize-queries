@@ -1,4 +1,4 @@
-const {getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating, getAllMoviesCached, getMovieById} = require('../controllers/controllers.js')
+const {getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating, getAllMoviesCached, getMovieById, getAllMoviesByPages} = require('../controllers/controllers.js')
 const {idValidator, nameValidator} = require('../validation.js')
 
 const logger = require('../logger/logger.js')
@@ -11,7 +11,11 @@ module.exports = [
     path: '/',
     // handler: getAllMovies,
     handler: getAllMoviesCached,
-}, 
+}, {
+    method: 'GET',
+    path: '/movies',
+    handler: getAllMoviesByPages
+},
     {
     method: 'GET',
     path: '/{id}',
