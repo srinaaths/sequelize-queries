@@ -52,3 +52,53 @@
 2022-07-14T09:58:45.624Z info addMovies success
 2022-07-14T09:58:48.779Z info deleteMovie called
 2022-07-14T09:58:48.787Z info deleteMovie record not found
+2022-07-15T02:34:02.611Z info getMoviesByDirector called
+2022-07-15T02:34:02.637Z info getMoviesByGenre succesful
+2022-07-15T02:34:07.783Z info getMoviesByDirector called
+2022-07-15T02:34:07.789Z info getMoviesByGenre succesful
+2022-07-15T02:34:08.854Z info getMoviesByDirector called
+2022-07-15T02:34:08.862Z info getMoviesByGenre succesful
+2022-07-15T02:34:10.109Z info getMoviesByDirector called
+2022-07-15T02:34:10.133Z info getMoviesByGenre succesful
+2022-07-15T02:34:11.428Z info getMoviesByDirector called
+2022-07-15T02:34:11.443Z info getMoviesByGenre succesful
+2022-07-15T02:34:12.282Z info getMoviesByDirector called
+2022-07-15T02:34:12.308Z info getMoviesByGenre succesful
+2022-07-15T02:34:13.674Z info getMoviesByDirector called
+2022-07-15T02:34:13.699Z info getMoviesByGenre succesful
+2022-07-15T02:34:17.503Z info getMoviesByDirector called
+2022-07-15T02:34:17.523Z info getMoviesByDirector failed
+2022-07-15T02:34:18.560Z info getMoviesByDirector called
+2022-07-15T02:34:18.578Z info getMoviesByDirector failed
+2022-07-15T02:34:19.310Z info getMoviesByDirector called
+2022-07-15T02:34:19.319Z info getMoviesByDirector failed
+2022-07-15T02:34:22.132Z info getMoviesByDirector called
+2022-07-15T02:34:22.150Z info getMoviesByGenre succesful
+2022-07-15T02:38:31.049Z info getMoviesByDirector called
+2022-07-15T02:38:31.053Z error getMoviesByDirector failed
+2022-07-15T02:38:57.773Z info getMoviesByDirector called
+2022-07-15T02:38:57.791Z info getMoviesByGenre succesful
+2022-07-15T02:38:57.791Z info added to cache
+2022-07-15T02:39:00.177Z info getMoviesByDirector called
+2022-07-15T02:39:00.202Z info getMoviesByGenre succesful
+2022-07-15T02:39:00.202Z info added to cache
+2022-07-15T02:39:02.103Z info getMoviesByDirector called
+2022-07-15T02:39:02.113Z info getMoviesByGenre succesful
+2022-07-15T02:39:02.113Z info added to cache
+2022-07-15T02:39:21.072Z info getMoviesByDirector called
+2022-07-15T02:39:21.088Z info getMoviesByGenre succesful
+2022-07-15T02:39:21.088Z info added to cache
+2022-07-15T02:39:21.938Z info getMoviesByDirector called
+2022-07-15T02:39:21.940Z info cache hit
+2022-07-15T02:39:22.567Z info getMoviesByDirector called
+2022-07-15T02:39:22.569Z info cache hit
+2022-07-15T02:39:23.048Z info getMoviesByDirector called
+2022-07-15T02:39:23.050Z info cache hit
+2022-07-15T02:39:23.549Z info getMoviesByDirector called
+2022-07-15T02:39:23.552Z info cache hit
+2022-07-15T02:39:24.093Z info getMoviesByDirector called
+2022-07-15T02:39:24.095Z info cache hit
+2022-07-15T02:39:24.558Z info getMoviesByDirector called
+2022-07-15T02:39:24.559Z info cache hit
+2022-07-15T02:39:24.964Z info getMoviesByDirector called
+2022-07-15T02:39:24.966Z info cache hit

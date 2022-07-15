@@ -1,5 +1,5 @@
-const {movie, user, actor, director, movie_actor, movie_genre, rating, genre, sequelize} = require('../models/models.js')
-const {Op} = require('sequelize')
+const { movie, user, actor, director, movie_actor, movie_genre, rating, genre, sequelize } = require('../models/models.js')
+const { Op } = require('sequelize')
 const logger = require('../logger/logger.js')
 
 // const Redis = require('redis')
@@ -24,7 +24,7 @@ const client = createClient();
 
 client.on('error', (err) => console.log('Redis Client Error', err));
 
-const connect = async() => await client.connect();
+const connect = async () => await client.connect();
 
 connect();
 
@@ -34,14 +34,14 @@ connect();
 const getAllMoviesCached = async (req, reply) => {
     try {
         const cachedResponse = await client.get('movies')
-        if(cachedResponse) {
+        if (cachedResponse) {
             console.log('got using cache');
             reply(JSON.parse(cachedResponse))
         }
         else {
             console.log('not found in cache');
             const data = await movie.findAll()
-            const saveResult = await client.setEx('movies',10,JSON.stringify(data));
+            const saveResult = await client.setEx('movies', 10, JSON.stringify(data));
             console.log(saveResult);
             console.log('added in cache');
             logger.info('got all movies')
@@ -66,9 +66,9 @@ const getAllMovies = async (req, reply) => {
 
 const getMovieById = async (req, reply) => {
     try {
-        const {id} = req.params;
+        const { id } = req.params;
         const cachedData = await client.get(`movie${id}`)
-        if(cachedData) {
+        if (cachedData) {
             console.log('cache hit');
             reply(JSON.parse(cachedData))
         }
@@ -176,18 +176,30 @@ const getMoviesByGenre = async (req, reply) => {
 const getMoviesByGenre2 = async (req, reply) => {
     try {
         logger.info('getMoviesByDirector called')
-        const data = await movie.findAll({
-            attributes: ['name'],
-            include: {
-                model: genre,
-                where: {
-                    name: req.params.name
-                },
-                attributes: ['name']
-            }
-        })
-        logger.info('getMoviesByGenre succesful')
-        reply(data)
+        const { movieGenre } = req.params;
+        const cachedData = await client.get(`moviesByGenre-${movieGenre}`);
+        if (cachedData) {
+            console.log('cache hit');
+            logger.info('cache hit');
+            reply(JSON.parse(cachedData));
+        }
+        else {
+            const data = await movie.findAll({
+                attributes: ['name'],
+                include: {
+                    model: genre,
+                    where: {
+                        name: req.params.name
+                    },
+                    attributes: ['name']
+                }
+            })
+            client.setEx(`moviesByGenre-${movieGenre}`, 1200, JSON.stringify(data))
+            logger.info('getMoviesByGenre succesful')
+            logger.info('added to cache')
+            console.log('added to cache')
+            reply(data)
+        }
     } catch (error) {
         logger.error('getMoviesByDirector failed')
         reply(error.message);
@@ -341,7 +353,7 @@ const movieCast = async (req, reply) => {
     }
 }
 
-const moviesCountByDirectorByGenre = async(req, reply) => {
+const moviesCountByDirectorByGenre = async (req, reply) => {
     try {
         logger.info('moviesCountByDirectorByGenre called')
         const [result, metadata] = await sequelize.query('SELECT genre.name, COUNT(movie.name) from movie JOIN director ON (movie."directorId" = director.id) JOIN movie_genre ON (movie.id = movie_genre."movieId") JOIN genre ON (movie_genre."genreId" = genre.id) WHERE movie."directorId" = ( SELECT id from director WHERE name = :name ) GROUP BY genre.name;', {
@@ -357,14 +369,14 @@ const moviesCountByDirectorByGenre = async(req, reply) => {
     }
 }
 
-const directorFlops = async(req, reply) => {
+const directorFlops = async (req, reply) => {
     try {
-    logger.info('directorFlops called')
-    const [result, metadata] = await sequelize.query('SELECT director.name, COUNT(director.name) from ( select rating."movieId", avg(rating.rating) , movie.name from rating join movie on (movie.id = rating."movieId") group by rating."movieId", movie.name having avg(rating.rating) < 6 order by avg(rating.rating) ) as intermediate_table JOIN movie on(intermediate_table."movieId" = movie.id) JOIN director ON (movie."directorId" = director.id)  GROUP BY director.name ORDER BY COUNT(director.name) DESC');
-    logger.info('directorFlops success')
-    reply(result)
+        logger.info('directorFlops called')
+        const [result, metadata] = await sequelize.query('SELECT director.name, COUNT(director.name) from ( select rating."movieId", avg(rating.rating) , movie.name from rating join movie on (movie.id = rating."movieId") group by rating."movieId", movie.name having avg(rating.rating) < 6 order by avg(rating.rating) ) as intermediate_table JOIN movie on(intermediate_table."movieId" = movie.id) JOIN director ON (movie."directorId" = director.id)  GROUP BY director.name ORDER BY COUNT(director.name) DESC');
+        logger.info('directorFlops success')
+        reply(result)
     } catch (error) {
-    logger.info('directorFlops failed')
+        logger.info('directorFlops failed')
         reply(error.message);
     }
 }
@@ -403,7 +415,7 @@ const deleteMovie = async (req, reply) => {
                 id: req.params.id
             }
         })
-        if(!result) {
+        if (!result) {
             logger.info('deleteMovie record not found')
             reply('movie not found')
         }
@@ -417,16 +429,16 @@ const deleteMovie = async (req, reply) => {
     }
 }
 
-const updateMovie = async(req, reply) => {
+const updateMovie = async (req, reply) => {
     try {
         logger.info('updateMovie called')
         const data = await movie.update(
             req.payload,
-        {
-            where: {
-                id: req.params.id
+            {
+                where: {
+                    id: req.params.id
+                }
             }
-        }
         )
         logger.info('updateMovie success')
         reply('updated')
@@ -472,7 +484,7 @@ const addUser = async (req, reply) => {
     }
 }
 
-const addRating = async(req, reply) => {
+const addRating = async (req, reply) => {
     try {
         logger.info('addRating called')
         const data = await rating.create(req.payload);
@@ -519,7 +531,7 @@ const deleteActor = async (req, reply) => {
                 id: req.params.id
             }
         })
-        if(data) {
+        if (data) {
             actor.destroy({
                 where: {
                     id: req.params.id
@@ -546,7 +558,7 @@ const deleteRating = async (req, reply) => {
                 id: req.params.id
             }
         })
-        if(result) {
+        if (result) {
             logger.info('deleteRating success')
             reply("deleted")
         }
@@ -576,4 +588,4 @@ const updateRating = async (req, reply) => {
     }
 }
 
-module.exports = {getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating, getAllMoviesCached, getMovieById}
+module.exports = { getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating, getAllMoviesCached, getMovieById }
