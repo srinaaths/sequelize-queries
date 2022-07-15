@@ -6,6 +6,12 @@ const routes = require('./routes/routes.js')
 
 const server = new Hapi.Server()
 
+const regFunc = async() => {
+await server.register(require('hapi-pagination'))
+}
+
+regFunc();
+
 server.connection({
     port: 3000
 })

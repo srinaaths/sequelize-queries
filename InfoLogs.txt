@@ -1,3 +1,22 @@
 2022-07-15T09:06:06.447Z info got all movies
 2022-07-15T09:13:17.782Z info got all movies
 2022-07-15T09:16:13.411Z info got all movies
+2022-07-15T09:47:38.634Z info got all movies
+2022-07-15T09:47:49.441Z info got all movies
+2022-07-15T09:47:59.946Z info got all movies
+2022-07-15T09:48:17.645Z info got all movies
+2022-07-15T09:48:27.693Z info got all movies
+2022-07-15T09:48:38.106Z info got all movies
+2022-07-15T09:48:48.186Z info got all movies
+2022-07-15T09:48:59.536Z info got all movies
+2022-07-15T10:22:53.210Z info addMovie called
+2022-07-15T10:22:53.229Z info addMovie success
+2022-07-15T10:28:09.023Z info addMovie called
+2022-07-15T10:28:09.033Z error addMovie failed
+2022-07-15T10:57:20.673Z info got all movies
+2022-07-15T10:58:26.149Z info got all movies
+2022-07-15T10:58:36.508Z info got all movies
+2022-07-15T11:00:40.822Z info got all movies
+2022-07-15T11:02:23.395Z info got all movies
+2022-07-15T11:02:41.562Z info got all movies
+2022-07-15T11:04:26.977Z info got all movies
