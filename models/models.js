@@ -1,5 +1,16 @@
 const Sequelize = require('sequelize')
 const { Op } = require('sequelize')
+const logger = require('../logger/logger.js')
+
+const { createClient } = require('redis');
+
+const client = createClient();
+
+client.on('error', (err) => console.log('Redis Client Error', err));
+
+const connect = async () => await client.connect();
+
+connect();
 
 const sequelize = new Sequelize('seq_db2', 'srinaaths', '', {
     dialect: 'postgres',
@@ -20,15 +31,23 @@ const movie = sequelize.define('movie', {
         allowNull: false
     }
 }, {
-    freezeTableName: true,
-    timestamps: false
-}, {
     hooks: {
+        beforeCreate: function() {
+            console.log('before create');
+            logger.info('before create');
+        },
+        afterCreate: function () {
+            console.log('after create');
+            client.flushAll();
+            logger.info('after create');
+        },
         beforeUpdate: function() {
             console.log('before update');
+            logger.info('before update');
         },
         afterUpdate: function () {
             console.log('after update');
+            logger.info('after update');
         }
     }
 })

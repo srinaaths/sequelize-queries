@@ -1,16 +1,23 @@
 const { getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating, getAllMoviesCached, getMovieById, getAllMoviesByPages } = require('../controllers/controllers.js')
 const { idValidator, nameValidator } = require('../validation.js')
+const pagination = require('hapi-pagination')
+
+const server = require('../index.js')
 
 const logger = require('../logger/logger.js')
 
-// const Joi = require('@hapi/joi')
+// server.register({
+//     register: require('hapi-pagination') }, 
+//     (err) => {
+//         if(err)
+//             console.log(err);
 
-module.exports = [
-    {
+    module.exports = [{
         method: 'GET',
         path: '/',
         // handler: getAllMovies,
         config: {
+            cors: true,
             plugins: {
                 pagination: {
                     enabled: true,
@@ -215,3 +222,4 @@ module.exports = [
         }
     }
 ]
+// })

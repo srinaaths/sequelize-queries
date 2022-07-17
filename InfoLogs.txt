@@ -35,3 +35,158 @@
 2022-07-15T11:20:07.647Z info cache hit
 2022-07-15T11:20:28.534Z info worstRatedMovie called
 2022-07-15T11:20:28.540Z info cache hit
+2022-07-17T06:38:40.867Z info got all movies
+2022-07-17T06:40:23.965Z info got all movies
+2022-07-17T06:40:23.974Z info got all movies
+2022-07-17T06:40:57.135Z info got all movies
+2022-07-17T06:41:22.511Z info got all movies
+2022-07-17T06:41:34.593Z info got all movies
+2022-07-17T06:41:51.899Z info got all movies
+2022-07-17T06:41:51.900Z info got all movies
+2022-07-17T06:42:56.180Z info got all movies
+2022-07-17T06:43:06.567Z info got all movies
+2022-07-17T06:44:41.223Z info got all movies
+2022-07-17T06:44:58.355Z info got all movies
+2022-07-17T06:46:34.864Z info got all movies
+2022-07-17T06:47:43.464Z info got all movies
+2022-07-17T06:47:54.033Z info got all movies
+2022-07-17T06:48:11.079Z info got all movies
+2022-07-17T06:48:39.932Z info got all movies
+2022-07-17T06:50:20.341Z info got all movies
+2022-07-17T06:51:28.260Z info got all movies
+2022-07-17T06:51:38.295Z info got all movies
+2022-07-17T06:51:48.323Z info got all movies
+2022-07-17T06:51:58.336Z info got all movies
+2022-07-17T06:52:08.367Z info got all movies
+2022-07-17T06:52:18.393Z info got all movies
+2022-07-17T06:52:28.409Z info got all movies
+2022-07-17T06:52:38.422Z info got all movies
+2022-07-17T06:52:48.436Z info got all movies
+2022-07-17T06:52:58.447Z info got all movies
+2022-07-17T06:53:08.458Z info got all movies
+2022-07-17T06:53:18.475Z info got all movies
+2022-07-17T06:53:28.488Z info got all movies
+2022-07-17T06:54:07.256Z info got all movies
+2022-07-17T06:54:17.295Z info got all movies
+2022-07-17T06:54:27.321Z info got all movies
+2022-07-17T06:54:37.342Z info got all movies
+2022-07-17T06:54:47.357Z info got all movies
+2022-07-17T06:54:57.368Z info got all movies
+2022-07-17T06:55:07.385Z info got all movies
+2022-07-17T06:55:17.402Z info got all movies
+2022-07-17T06:55:27.423Z info got all movies
+2022-07-17T06:55:37.434Z info got all movies
+2022-07-17T06:55:47.447Z info got all movies
+2022-07-17T06:55:57.460Z info got all movies
+2022-07-17T06:56:07.477Z info got all movies
+2022-07-17T06:56:17.496Z info got all movies
+2022-07-17T06:56:27.513Z info got all movies
+2022-07-17T06:56:37.530Z info got all movies
+2022-07-17T06:56:47.553Z info got all movies
+2022-07-17T06:57:40.054Z info got all movies
+2022-07-17T06:57:50.073Z info got all movies
+2022-07-17T06:58:03.843Z info got all movies
+2022-07-17T06:58:13.869Z info got all movies
+2022-07-17T06:58:24.575Z info got all movies
+2022-07-17T06:59:38.896Z info got all movies
+2022-07-17T06:59:49.041Z info got all movies
+2022-07-17T07:00:13.067Z info got all movies
+2022-07-17T07:00:29.485Z info got all movies
+2022-07-17T07:00:47.381Z info got all movies
+2022-07-17T07:00:58.303Z info got all movies
+2022-07-17T07:01:45.451Z info got all movies
+2022-07-17T07:01:56.440Z info got all movies
+2022-07-17T07:02:19.893Z info got all movies
+2022-07-17T07:04:03.350Z info got all movies
+2022-07-17T07:04:22.543Z info got all movies
+2022-07-17T07:04:43.093Z info got all movies
+2022-07-17T07:05:43.177Z info got all movies
+2022-07-17T07:06:02.637Z info got all movies
+2022-07-17T07:07:37.449Z info got all movies
+2022-07-17T07:08:27.438Z info got all movies
+2022-07-17T07:08:40.024Z info got all movies
+2022-07-17T07:08:55.103Z info got all movies
+2022-07-17T07:09:48.036Z info got all movies
+2022-07-17T07:15:31.969Z info got all movies
+2022-07-17T07:16:51.454Z info got all movies
+2022-07-17T07:17:02.862Z info got all movies
+2022-07-17T07:22:50.874Z info got all movies
+2022-07-17T07:24:42.318Z info got all movies
+2022-07-17T07:27:29.581Z info got all movies
+2022-07-17T07:27:43.409Z info got all movies
+2022-07-17T07:28:43.807Z info got all movies
+2022-07-17T07:29:03.446Z info worstRatedMovie called
+2022-07-17T07:29:03.451Z info cache miss
+2022-07-17T07:29:03.478Z info added to cache
+2022-07-17T07:29:03.478Z info worstRatedMovie success
+2022-07-17T07:35:18.594Z info got all movies
+2022-07-17T07:36:39.243Z info got all movies
+2022-07-17T07:37:24.977Z info got all movies
+2022-07-17T07:37:46.012Z info got all movies
+2022-07-17T16:31:53.702Z info addMovie called
+2022-07-17T16:31:53.720Z info addMovie success
+2022-07-17T16:33:27.159Z info addMovie called
+2022-07-17T16:33:27.168Z info addMovie success
+2022-07-17T16:34:42.026Z info addMovie called
+2022-07-17T16:34:42.034Z info addMovie success
+2022-07-17T16:36:12.660Z info addMovie called
+2022-07-17T16:36:12.668Z info addMovie success
+2022-07-17T16:37:53.056Z info addMovie called
+2022-07-17T16:37:53.062Z error addMovie failed
+2022-07-17T16:38:07.524Z info addMovie called
+2022-07-17T16:38:07.528Z error addMovie failed
+2022-07-17T16:38:28.466Z info addMovie called
+2022-07-17T16:38:28.469Z error addMovie failed
+2022-07-17T16:38:56.098Z info addMovie called
+2022-07-17T16:39:05.435Z info addMovie called
+2022-07-17T16:39:05.440Z error addMovie failed
+2022-07-17T16:40:22.575Z info addMovie called
+2022-07-17T16:40:22.579Z error addMovie failed
+2022-07-17T16:40:26.161Z info directorFlops called
+2022-07-17T16:40:26.203Z info directorFlops success
+2022-07-17T16:40:28.137Z info moviesCountByDirectorByGenre called
+2022-07-17T16:40:28.145Z info moviesCountByDirectorByGenre success
+2022-07-17T16:40:29.493Z info allMoviesByActor called
+2022-07-17T16:40:29.516Z info allMoviesByActor success
+2022-07-17T16:40:33.174Z info addMovie called
+2022-07-17T16:40:33.181Z error addMovie failed
+2022-07-17T16:40:59.159Z info addMovie called
+2022-07-17T16:40:59.163Z error addMovie failed
+2022-07-17T16:41:14.013Z info addMovie called
+2022-07-17T16:41:14.017Z info before update
+2022-07-17T16:41:14.022Z info after update
+2022-07-17T16:41:14.022Z info addMovie success
+2022-07-17T16:41:47.271Z info addMovie called
+2022-07-17T16:41:47.275Z info before create
+2022-07-17T16:41:47.280Z info after create
+2022-07-17T16:41:47.280Z info addMovie success
+2022-07-17T16:42:40.398Z info got all movies
+2022-07-17T16:43:35.053Z info got all movies
+2022-07-17T16:44:58.941Z info got all movies
+2022-07-17T16:46:59.198Z info got all movies
+2022-07-17T17:02:40.328Z info got all movies
+2022-07-17T17:04:04.544Z info got all movies
+2022-07-17T17:05:22.470Z info addMovie called
+2022-07-17T17:05:22.474Z error addMovie failed
+2022-07-17T17:05:29.349Z info addMovie called
+2022-07-17T17:05:29.353Z error addMovie failed
+2022-07-17T17:05:52.442Z info addMovie called
+2022-07-17T17:05:52.446Z error addMovie failed
+2022-07-17T17:06:12.290Z info addMovie called
+2022-07-17T17:06:12.294Z error addMovie failed
+2022-07-17T17:06:18.749Z info addMovie called
+2022-07-17T17:06:18.753Z info before create
+2022-07-17T17:06:18.758Z info after create
+2022-07-17T17:06:18.758Z info addMovie success
+2022-07-17T17:06:46.045Z info addMovie called
+2022-07-17T17:06:46.048Z info before create
+2022-07-17T17:06:46.055Z info after create
+2022-07-17T17:06:46.055Z info addMovie success
+2022-07-17T17:07:48.709Z info addMovie called
+2022-07-17T17:07:48.713Z info before create
+2022-07-17T17:07:48.718Z info after create
+2022-07-17T17:07:48.718Z info addMovie success
+2022-07-17T17:08:14.972Z info addMovie called
+2022-07-17T17:08:14.977Z info before create
+2022-07-17T17:08:14.992Z info after create
+2022-07-17T17:08:14.993Z info addMovie success

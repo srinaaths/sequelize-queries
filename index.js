@@ -6,21 +6,24 @@ const routes = require('./routes/routes.js')
 
 const server = new Hapi.Server()
 
-const regFunc = async() => {
-await server.register(require('hapi-pagination'))
-}
+// const regFunc = async() => {
+// await server.register(require('hapi-pagination'))
+// }
 
-regFunc();
-
+// regFunc();
 server.connection({
     port: 3000
 })
 
-server.start(err => {
+server.start(async (err) => {
     if (err)
         throw err
+    await server.register(require('hapi-pagination'))
     console.log('connected');
 })
 
+server.register({plugin: require('hapi-pagination')})
 
 server.route(routes);
+
+module.exports = server;
