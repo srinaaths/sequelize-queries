@@ -129,6 +129,14 @@ const user = sequelize.define('user', {
     },
     name: {
         type: Sequelize.DataTypes.STRING,
+        allowNull: false,
+        unique: {
+            args: true,
+            msg: 'username already in use'
+        }
+    },
+    password: {
+        type: Sequelize.DataTypes.STRING,
         allowNull: false
     }
 })

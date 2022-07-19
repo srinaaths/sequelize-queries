@@ -11,9 +11,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "hapi": "^16.1.0",
     "hapi-pagination": "^4.0.0",
     "joi": "^10.6.0",
+    "jsonwebtoken": "^8.5.1",
     "nodemon": "^2.0.19",
     "pg": "^8.7.3",
     "pg-hstore": "^2.3.4",

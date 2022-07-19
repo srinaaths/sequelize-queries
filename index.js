@@ -12,7 +12,7 @@ const server = new Hapi.Server()
 
 // regFunc();
 server.connection({
-    port: 3000
+    port: 8080
 })
 
 server.start(async (err) => {

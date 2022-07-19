@@ -11,3 +11,68 @@
 2022-07-17T17:05:29.353Z error addMovie failed
 2022-07-17T17:05:52.446Z error addMovie failed
 2022-07-17T17:06:12.294Z error addMovie failed
+2022-07-19T03:18:33.701Z error addUser failed
+2022-07-19T03:22:45.196Z error addUser failed
+2022-07-19T03:23:29.380Z error addUser failed
+2022-07-19T03:26:06.853Z error addUser failed
+2022-07-19T03:26:31.465Z error addUser failed
+2022-07-19T03:27:01.860Z error addUser failed
+2022-07-19T03:27:59.399Z error addUser failed
+2022-07-19T03:34:52.704Z error addUser failed
+2022-07-19T03:34:54.805Z error addUser failed
+2022-07-19T03:34:55.035Z error addUser failed
+2022-07-19T03:34:55.220Z error addUser failed
+2022-07-19T03:34:56.272Z error addUser failed
+2022-07-19T03:35:42.174Z error addUser failed
+2022-07-19T03:36:13.855Z error addUser failed
+2022-07-19T03:37:29.633Z error addUser failed
+2022-07-19T03:38:09.173Z error addUser failed
+2022-07-19T03:38:09.173Z error notNull Violation: user.name cannot be null
+2022-07-19T03:38:14.241Z error addUser failed
+2022-07-19T03:38:14.242Z error notNull Violation: user.name cannot be null
+2022-07-19T03:38:54.717Z error addUser failed
+2022-07-19T03:38:54.718Z error notNull Violation: user.name cannot be null
+2022-07-19T03:39:26.381Z error addUser failed
+2022-07-19T03:39:26.381Z error notNull Violation: user.name cannot be null
+2022-07-19T03:40:02.111Z error addUser failed
+2022-07-19T03:40:02.111Z error notNull Violation: user.name cannot be null
+2022-07-19T03:40:20.810Z error addUser failed
+2022-07-19T03:40:20.810Z error notNull Violation: user.name cannot be null
+2022-07-19T06:59:47.696Z error addUser failed
+2022-07-19T06:59:47.696Z error username already in use
+2022-07-19T07:13:43.733Z error user.findOne is not a function
+2022-07-19T07:13:45.063Z error user.findOne is not a function
+2022-07-19T07:13:50.004Z error user.findOne is not a function
+2022-07-19T07:14:23.023Z error user.findOne is not a function
+2022-07-19T07:16:18.425Z error user.findAll is not a function
+2022-07-19T07:16:19.351Z error user.findAll is not a function
+2022-07-19T07:16:20.211Z error user.findAll is not a function
+2022-07-19T07:17:39.101Z error WHERE parameter "name" has invalid "undefined" value
+2022-07-19T07:17:40.566Z error WHERE parameter "name" has invalid "undefined" value
+2022-07-19T07:18:12.685Z error WHERE parameter "name" has invalid "undefined" value
+2022-07-19T07:30:44.098Z error addUser failed
+2022-07-19T07:30:44.098Z error username already in use
+2022-07-19T07:31:37.682Z error addUser failed
+2022-07-19T07:31:37.682Z error username already in use
+2022-07-19T07:31:54.174Z error addUser failed
+2022-07-19T07:31:54.175Z error username already in use
+2022-07-19T07:53:56.646Z error addUser failed
+2022-07-19T07:53:56.646Z error username already in use
+2022-07-19T07:54:15.058Z error data and hash arguments required
+2022-07-19T07:54:16.882Z error data and hash arguments required
+2022-07-19T07:55:28.171Z error Cannot read property 'password' of undefined
+2022-07-19T07:55:29.542Z error Cannot read property 'password' of undefined
+2022-07-19T07:56:32.029Z error data is not defined
+2022-07-19T07:56:33.353Z error data is not defined
+2022-07-19T08:00:06.192Z error reply interface called twice
+2022-07-19T08:00:34.058Z error Cannot read property 'password' of undefined
+2022-07-19T08:00:36.056Z error Cannot read property 'password' of undefined
+2022-07-19T08:01:17.298Z error Unexpected token o in JSON at position 1
+2022-07-19T08:01:34.018Z error Unexpected token o in JSON at position 1
+2022-07-19T08:01:35.378Z error Unexpected token o in JSON at position 1
+2022-07-19T08:02:19.925Z error Cannot read property 'password' of undefined
+2022-07-19T09:05:33.621Z error token is not defined
+2022-07-19T09:05:35.267Z error token is not defined
+2022-07-19T09:05:35.888Z error token is not defined
+2022-07-19T09:05:36.165Z error token is not defined
+2022-07-19T09:06:03.119Z error token is not defined

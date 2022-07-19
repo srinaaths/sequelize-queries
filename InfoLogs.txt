@@ -190,3 +190,824 @@
 2022-07-17T17:08:14.977Z info before create
 2022-07-17T17:08:14.992Z info after create
 2022-07-17T17:08:14.993Z info addMovie success
+2022-07-19T03:15:08.144Z info addUser called
+2022-07-19T03:15:08.168Z info addUser success
+2022-07-19T03:15:30.723Z info addUser called
+2022-07-19T03:15:30.731Z info addUser success
+2022-07-19T03:18:33.695Z info addUser called
+2022-07-19T03:18:33.701Z error addUser failed
+2022-07-19T03:18:57.169Z info addUser called
+2022-07-19T03:18:57.192Z info addUser success
+2022-07-19T03:22:45.192Z info addUser called
+2022-07-19T03:22:45.196Z error addUser failed
+2022-07-19T03:23:29.373Z info addUser called
+2022-07-19T03:23:29.380Z error addUser failed
+2022-07-19T03:26:06.850Z info addUser called
+2022-07-19T03:26:06.853Z error addUser failed
+2022-07-19T03:26:31.460Z info addUser called
+2022-07-19T03:26:31.465Z error addUser failed
+2022-07-19T03:27:01.855Z info addUser called
+2022-07-19T03:27:01.860Z error addUser failed
+2022-07-19T03:27:59.395Z info addUser called
+2022-07-19T03:27:59.399Z error addUser failed
+2022-07-19T03:34:52.701Z info addUser called
+2022-07-19T03:34:52.704Z error addUser failed
+2022-07-19T03:34:54.796Z info addUser called
+2022-07-19T03:34:54.805Z error addUser failed
+2022-07-19T03:34:55.029Z info addUser called
+2022-07-19T03:34:55.035Z error addUser failed
+2022-07-19T03:34:55.218Z info addUser called
+2022-07-19T03:34:55.220Z error addUser failed
+2022-07-19T03:34:56.270Z info addUser called
+2022-07-19T03:34:56.272Z error addUser failed
+2022-07-19T03:35:42.169Z info addUser called
+2022-07-19T03:35:42.174Z error addUser failed
+2022-07-19T03:36:13.853Z info addUser called
+2022-07-19T03:36:13.855Z error addUser failed
+2022-07-19T03:37:29.630Z info addUser called
+2022-07-19T03:37:29.633Z error addUser failed
+2022-07-19T03:38:09.169Z info addUser called
+2022-07-19T03:38:09.173Z error addUser failed
+2022-07-19T03:38:09.173Z error notNull Violation: user.name cannot be null
+2022-07-19T03:38:14.237Z info addUser called
+2022-07-19T03:38:14.241Z error addUser failed
+2022-07-19T03:38:14.242Z error notNull Violation: user.name cannot be null
+2022-07-19T03:38:54.711Z info addUser called
+2022-07-19T03:38:54.717Z error addUser failed
+2022-07-19T03:38:54.718Z error notNull Violation: user.name cannot be null
+2022-07-19T03:39:26.373Z info addUser called
+2022-07-19T03:39:26.381Z error addUser failed
+2022-07-19T03:39:26.381Z error notNull Violation: user.name cannot be null
+2022-07-19T03:40:02.107Z info addUser called
+2022-07-19T03:40:02.111Z error addUser failed
+2022-07-19T03:40:02.111Z error notNull Violation: user.name cannot be null
+2022-07-19T03:40:20.804Z info addUser called
+2022-07-19T03:40:20.810Z error addUser failed
+2022-07-19T03:40:20.810Z error notNull Violation: user.name cannot be null
+2022-07-19T03:42:41.298Z info addUser called
+2022-07-19T03:42:41.336Z info addUser success
+2022-07-19T03:46:55.747Z info addUser called
+2022-07-19T03:46:55.773Z info addUser success
+2022-07-19T03:47:13.400Z info addUser called
+2022-07-19T03:47:13.429Z info addUser success
+2022-07-19T03:47:19.974Z info addUser called
+2022-07-19T03:47:19.986Z info addUser success
+2022-07-19T03:48:17.469Z info addUser called
+2022-07-19T03:48:17.502Z info addUser success
+2022-07-19T06:11:15.298Z info addUser called
+2022-07-19T06:11:15.320Z info addUser success
+2022-07-19T06:17:30.316Z info got all movies
+2022-07-19T06:17:48.057Z info got all movies
+2022-07-19T06:18:59.819Z info got all movies
+2022-07-19T06:21:38.857Z info got all movies
+2022-07-19T06:40:22.515Z info addUser called
+2022-07-19T06:40:22.534Z info addUser success
+2022-07-19T06:41:19.775Z info addUser called
+2022-07-19T06:41:19.801Z info addUser success
+2022-07-19T06:52:31.383Z info got all movies
+2022-07-19T06:53:07.268Z info got all movies
+2022-07-19T06:53:35.267Z info got all movies
+2022-07-19T06:55:32.317Z info addUser called
+2022-07-19T06:55:32.341Z info addUser success
+2022-07-19T06:57:58.696Z info addUser called
+2022-07-19T06:57:58.711Z info addUser success
+2022-07-19T06:58:24.456Z info addUser called
+2022-07-19T06:58:24.481Z info addUser success
+2022-07-19T06:59:46.714Z info addUser called
+2022-07-19T06:59:46.729Z info addUser success
+2022-07-19T06:59:47.677Z info addUser called
+2022-07-19T06:59:47.696Z error addUser failed
+2022-07-19T06:59:47.696Z error username already in use
+2022-07-19T07:07:50.327Z info addUser called
+2022-07-19T07:07:50.370Z info addUser success
+2022-07-19T07:10:54.651Z info addUser called
+2022-07-19T07:10:54.682Z info addUser success
+2022-07-19T07:12:38.046Z info addUser called
+2022-07-19T07:12:38.060Z info addUser success
+2022-07-19T07:13:43.730Z info loginUser called
+2022-07-19T07:13:43.733Z error user.findOne is not a function
+2022-07-19T07:13:45.061Z info loginUser called
+2022-07-19T07:13:45.063Z error user.findOne is not a function
+2022-07-19T07:13:50.003Z info loginUser called
+2022-07-19T07:13:50.004Z error user.findOne is not a function
+2022-07-19T07:14:23.021Z info loginUser called
+2022-07-19T07:14:23.023Z error user.findOne is not a function
+2022-07-19T07:16:18.423Z info loginUser called
+2022-07-19T07:16:18.425Z error user.findAll is not a function
+2022-07-19T07:16:19.351Z info loginUser called
+2022-07-19T07:16:19.351Z error user.findAll is not a function
+2022-07-19T07:16:20.210Z info loginUser called
+2022-07-19T07:16:20.211Z error user.findAll is not a function
+2022-07-19T07:17:39.092Z info loginUser called
+2022-07-19T07:17:39.101Z error WHERE parameter "name" has invalid "undefined" value
+2022-07-19T07:17:40.562Z info loginUser called
+2022-07-19T07:17:40.566Z error WHERE parameter "name" has invalid "undefined" value
+2022-07-19T07:18:12.674Z info loginUser called
+2022-07-19T07:18:12.676Z info fasjl
+2022-07-19T07:18:12.677Z info fsdkl
+2022-07-19T07:18:12.685Z error WHERE parameter "name" has invalid "undefined" value
+2022-07-19T07:18:29.970Z info loginUser called
+2022-07-19T07:18:29.972Z info fasjl
+2022-07-19T07:18:29.972Z info fsdkl
+2022-07-19T07:18:29.986Z info user not found
+2022-07-19T07:18:39.087Z info loginUser called
+2022-07-19T07:18:39.088Z info sri
+2022-07-19T07:18:39.088Z info fsdkl
+2022-07-19T07:18:39.103Z info user not found
+2022-07-19T07:18:42.068Z info loginUser called
+2022-07-19T07:18:42.069Z info sri
+2022-07-19T07:18:42.069Z info fsdkl
+2022-07-19T07:18:42.080Z info user not found
+2022-07-19T07:19:05.071Z info loginUser called
+2022-07-19T07:19:05.072Z info sri
+2022-07-19T07:19:05.073Z info fsdkl
+2022-07-19T07:19:05.085Z info user not found
+2022-07-19T07:19:08.996Z info loginUser called
+2022-07-19T07:19:08.997Z info sri
+2022-07-19T07:19:08.997Z info fsdkl
+2022-07-19T07:19:09.012Z info user not found
+2022-07-19T07:19:37.016Z info loginUser called
+2022-07-19T07:19:37.018Z info sri
+2022-07-19T07:19:37.018Z info fsdkl
+2022-07-19T07:19:37.032Z info null
+2022-07-19T07:19:37.032Z info user not found
+2022-07-19T07:21:00.929Z info loginUser called
+2022-07-19T07:21:00.931Z info sri
+2022-07-19T07:21:00.932Z info fsdkl
+2022-07-19T07:21:00.945Z info null
+2022-07-19T07:21:00.946Z info user not found
+2022-07-19T07:22:19.042Z info loginUser called
+2022-07-19T07:22:19.044Z info sdfkj
+2022-07-19T07:22:19.044Z info jfsdlka
+2022-07-19T07:22:19.056Z info null
+2022-07-19T07:22:19.056Z info user not found
+2022-07-19T07:22:23.052Z info loginUser called
+2022-07-19T07:22:23.053Z info sri
+2022-07-19T07:22:23.053Z info jfsdlka
+2022-07-19T07:22:23.064Z info null
+2022-07-19T07:22:23.064Z info user not found
+2022-07-19T07:23:15.525Z info addUser called
+2022-07-19T07:23:15.540Z info addUser success
+2022-07-19T07:23:18.378Z info loginUser called
+2022-07-19T07:23:18.379Z info sri
+2022-07-19T07:23:18.379Z info sri123
+2022-07-19T07:23:18.397Z info [object SequelizeInstance:user]
+2022-07-19T07:23:18.397Z info user Found
+2022-07-19T07:23:27.319Z info loginUser called
+2022-07-19T07:23:27.319Z info 123sri
+2022-07-19T07:23:27.319Z info sri123
+2022-07-19T07:23:27.323Z info null
+2022-07-19T07:23:27.324Z info user not found
+2022-07-19T07:24:51.973Z info loginUser called
+2022-07-19T07:24:51.975Z info 123sri
+2022-07-19T07:24:51.975Z info sri123
+2022-07-19T07:24:51.987Z info null
+2022-07-19T07:24:51.987Z info user not found
+2022-07-19T07:24:53.781Z info loginUser called
+2022-07-19T07:24:53.782Z info 123sri
+2022-07-19T07:24:53.782Z info sri123
+2022-07-19T07:24:53.792Z info null
+2022-07-19T07:24:53.792Z info user not found
+2022-07-19T07:24:53.976Z info loginUser called
+2022-07-19T07:24:53.976Z info 123sri
+2022-07-19T07:24:53.977Z info sri123
+2022-07-19T07:24:53.978Z info null
+2022-07-19T07:24:53.978Z info user not found
+2022-07-19T07:24:54.167Z info loginUser called
+2022-07-19T07:24:54.167Z info 123sri
+2022-07-19T07:24:54.167Z info sri123
+2022-07-19T07:24:54.170Z info null
+2022-07-19T07:24:54.170Z info user not found
+2022-07-19T07:25:02.412Z info loginUser called
+2022-07-19T07:25:02.413Z info 123sri
+2022-07-19T07:25:02.413Z info sri123
+2022-07-19T07:25:02.426Z info null
+2022-07-19T07:25:02.426Z info user not found
+2022-07-19T07:25:02.797Z info loginUser called
+2022-07-19T07:25:02.798Z info 123sri
+2022-07-19T07:25:02.798Z info sri123
+2022-07-19T07:25:02.812Z info null
+2022-07-19T07:25:02.813Z info user not found
+2022-07-19T07:25:03.306Z info loginUser called
+2022-07-19T07:25:03.307Z info 123sri
+2022-07-19T07:25:03.307Z info sri123
+2022-07-19T07:25:03.323Z info null
+2022-07-19T07:25:03.324Z info user not found
+2022-07-19T07:25:11.893Z info loginUser called
+2022-07-19T07:25:11.894Z info 123sri
+2022-07-19T07:25:11.895Z info sri123
+2022-07-19T07:25:11.908Z info null
+2022-07-19T07:25:11.908Z info user not found
+2022-07-19T07:25:46.149Z info loginUser called
+2022-07-19T07:25:46.150Z info sri
+2022-07-19T07:25:46.151Z info sri123
+2022-07-19T07:25:46.185Z info [object SequelizeInstance:user]
+2022-07-19T07:25:46.186Z info user Found
+2022-07-19T07:26:06.858Z info loginUser called
+2022-07-19T07:26:06.861Z info sri
+2022-07-19T07:26:06.861Z info flksd
+2022-07-19T07:26:06.874Z info [object SequelizeInstance:user]
+2022-07-19T07:26:06.874Z info user Found
+2022-07-19T07:26:10.721Z info loginUser called
+2022-07-19T07:26:10.723Z info dsfkljsdkl
+2022-07-19T07:26:10.723Z info flksd
+2022-07-19T07:26:10.736Z info null
+2022-07-19T07:26:10.736Z info user not found
+2022-07-19T07:26:37.635Z info loginUser called
+2022-07-19T07:26:37.637Z info srifds
+2022-07-19T07:26:37.637Z info fdls
+2022-07-19T07:26:37.650Z info null
+2022-07-19T07:26:37.650Z info user not found
+2022-07-19T07:26:40.843Z info loginUser called
+2022-07-19T07:26:40.844Z info sri
+2022-07-19T07:26:40.845Z info fdls
+2022-07-19T07:26:40.859Z info [object SequelizeInstance:user]
+2022-07-19T07:26:40.860Z info user Found
+2022-07-19T07:28:48.243Z info addUser called
+2022-07-19T07:28:48.275Z info addUser success
+2022-07-19T07:28:55.159Z info loginUser called
+2022-07-19T07:28:55.160Z info ak
+2022-07-19T07:28:55.160Z info dskl
+2022-07-19T07:28:55.179Z info [object SequelizeInstance:user]
+2022-07-19T07:28:55.179Z info user Found
+2022-07-19T07:28:59.568Z info loginUser called
+2022-07-19T07:28:59.569Z info dsafkj
+2022-07-19T07:28:59.569Z info dskl
+2022-07-19T07:28:59.583Z info null
+2022-07-19T07:28:59.584Z info user not found
+2022-07-19T07:30:37.772Z info addUser called
+2022-07-19T07:30:37.802Z info addUser success
+2022-07-19T07:30:44.067Z info addUser called
+2022-07-19T07:30:44.098Z error addUser failed
+2022-07-19T07:30:44.098Z error username already in use
+2022-07-19T07:31:37.650Z info addUser called
+2022-07-19T07:31:37.682Z error addUser failed
+2022-07-19T07:31:37.682Z error username already in use
+2022-07-19T07:31:54.152Z info addUser called
+2022-07-19T07:31:54.174Z error addUser failed
+2022-07-19T07:31:54.175Z error username already in use
+2022-07-19T07:32:56.975Z info addUser called
+2022-07-19T07:32:56.998Z info addUser success
+2022-07-19T07:33:03.653Z info loginUser called
+2022-07-19T07:33:03.654Z info sdfj
+2022-07-19T07:33:03.654Z info jfdslk
+2022-07-19T07:33:03.675Z info null
+2022-07-19T07:33:03.676Z info user not found
+2022-07-19T07:33:08.761Z info loginUser called
+2022-07-19T07:33:08.762Z info sri12345
+2022-07-19T07:33:08.762Z info jfdslk
+2022-07-19T07:33:08.774Z info [object SequelizeInstance:user]
+2022-07-19T07:33:08.775Z info user Found
+2022-07-19T07:34:34.106Z info loginUser called
+2022-07-19T07:34:34.108Z info sri12345 T
+2022-07-19T07:34:34.108Z info jfdslk
+2022-07-19T07:34:34.120Z info null
+2022-07-19T07:34:34.120Z info user not found
+2022-07-19T07:34:37.134Z info loginUser called
+2022-07-19T07:34:37.135Z info sri12345
+2022-07-19T07:34:37.135Z info jfdslk
+2022-07-19T07:34:37.154Z info [object SequelizeInstance:user]
+2022-07-19T07:34:37.154Z info user Found
+2022-07-19T07:34:53.428Z info loginUser called
+2022-07-19T07:34:53.431Z info sri12345
+2022-07-19T07:34:53.431Z info jfdslk
+2022-07-19T07:34:53.438Z info [object SequelizeInstance:user]
+2022-07-19T07:34:53.438Z info user Found
+2022-07-19T07:36:15.255Z info loginUser called
+2022-07-19T07:36:15.256Z info 
+2022-07-19T07:36:15.256Z info 
+2022-07-19T07:36:15.262Z info [object SequelizeInstance:user],[object SequelizeInstance:user],[object SequelizeInstance:user]
+2022-07-19T07:36:15.262Z info user Found
+2022-07-19T07:36:28.342Z info loginUser called
+2022-07-19T07:36:28.344Z info 
+2022-07-19T07:36:28.344Z info 
+2022-07-19T07:36:28.355Z info [object SequelizeInstance:user],[object SequelizeInstance:user],[object SequelizeInstance:user]
+2022-07-19T07:36:28.356Z info user Found
+2022-07-19T07:36:43.176Z info loginUser called
+2022-07-19T07:36:43.177Z info 
+2022-07-19T07:36:43.177Z info 
+2022-07-19T07:36:43.186Z info [object SequelizeInstance:user],[object SequelizeInstance:user],[object SequelizeInstance:user]
+2022-07-19T07:36:43.186Z info user Found
+2022-07-19T07:36:59.276Z info loginUser called
+2022-07-19T07:36:59.279Z info 
+2022-07-19T07:36:59.279Z info 
+2022-07-19T07:36:59.290Z info [object SequelizeInstance:user],[object SequelizeInstance:user],[object SequelizeInstance:user]
+2022-07-19T07:36:59.290Z info user Found
+2022-07-19T07:37:30.840Z info loginUser called
+2022-07-19T07:37:30.843Z info sri12345
+2022-07-19T07:37:30.843Z info jklsdf
+2022-07-19T07:37:30.857Z info [object SequelizeInstance:user]
+2022-07-19T07:37:30.857Z info user Found
+2022-07-19T07:40:09.644Z info loginUser called
+2022-07-19T07:40:09.645Z info sri
+2022-07-19T07:40:09.646Z info  fsd
+2022-07-19T07:40:09.674Z info [object SequelizeInstance:user]
+2022-07-19T07:40:09.674Z info user Found
+2022-07-19T07:40:14.481Z info loginUser called
+2022-07-19T07:40:14.482Z info sdkljf
+2022-07-19T07:40:14.482Z info  fsd
+2022-07-19T07:40:14.493Z info null
+2022-07-19T07:40:14.494Z info user not found
+2022-07-19T07:40:15.466Z info loginUser called
+2022-07-19T07:40:15.467Z info sdkljf
+2022-07-19T07:40:15.467Z info  fsd
+2022-07-19T07:40:15.481Z info null
+2022-07-19T07:40:15.481Z info user not found
+2022-07-19T07:40:15.741Z info loginUser called
+2022-07-19T07:40:15.742Z info sdkljf
+2022-07-19T07:40:15.742Z info  fsd
+2022-07-19T07:40:15.743Z info null
+2022-07-19T07:40:15.743Z info user not found
+2022-07-19T07:40:17.019Z info loginUser called
+2022-07-19T07:40:17.019Z info sdkljf
+2022-07-19T07:40:17.019Z info  fsd
+2022-07-19T07:40:17.042Z info null
+2022-07-19T07:40:17.043Z info user not found
+2022-07-19T07:41:02.850Z info loginUser called
+2022-07-19T07:41:02.851Z info dfsjlkfdsj
+2022-07-19T07:41:02.851Z info jfadslk
+2022-07-19T07:41:02.884Z info null
+2022-07-19T07:41:02.884Z info user not found
+2022-07-19T07:41:06.017Z info loginUser called
+2022-07-19T07:41:06.017Z info sri
+2022-07-19T07:41:06.017Z info jfadslk
+2022-07-19T07:41:06.022Z info [object SequelizeInstance:user]
+2022-07-19T07:41:06.022Z info user Found
+2022-07-19T07:41:16.410Z info loginUser called
+2022-07-19T07:41:16.411Z info sfdlk
+2022-07-19T07:41:16.411Z info fdsklf
+2022-07-19T07:41:16.423Z info null
+2022-07-19T07:41:16.423Z info user not found
+2022-07-19T07:41:19.221Z info loginUser called
+2022-07-19T07:41:19.221Z info sri
+2022-07-19T07:41:19.222Z info fdsklf
+2022-07-19T07:41:19.233Z info [object SequelizeInstance:user]
+2022-07-19T07:41:19.234Z info user Found
+2022-07-19T07:41:50.888Z info loginUser called
+2022-07-19T07:41:50.889Z info fsdjlkfsd
+2022-07-19T07:41:50.889Z info sdifjio
+2022-07-19T07:41:50.918Z info null
+2022-07-19T07:41:50.919Z info user not found
+2022-07-19T07:42:18.986Z info addUser called
+2022-07-19T07:42:19.009Z info addUser success
+2022-07-19T07:42:24.082Z info loginUser called
+2022-07-19T07:42:24.083Z info sri
+2022-07-19T07:42:24.084Z info sdifjio
+2022-07-19T07:42:24.106Z info [object SequelizeInstance:user]
+2022-07-19T07:42:24.106Z info user Found
+2022-07-19T07:42:26.858Z info loginUser called
+2022-07-19T07:42:26.858Z info sri123
+2022-07-19T07:42:26.859Z info sdifjio
+2022-07-19T07:42:26.873Z info [object SequelizeInstance:user]
+2022-07-19T07:42:26.874Z info user Found
+2022-07-19T07:42:28.167Z info loginUser called
+2022-07-19T07:42:28.168Z info sri1234
+2022-07-19T07:42:28.168Z info sdifjio
+2022-07-19T07:42:28.182Z info null
+2022-07-19T07:42:28.182Z info user not found
+2022-07-19T07:50:15.626Z info addUser called
+2022-07-19T07:50:15.930Z info addUser success
+2022-07-19T07:53:56.351Z info addUser called
+2022-07-19T07:53:56.646Z error addUser failed
+2022-07-19T07:53:56.646Z error username already in use
+2022-07-19T07:54:03.067Z info addUser called
+2022-07-19T07:54:03.371Z info addUser success
+2022-07-19T07:54:11.475Z info loginUser called
+2022-07-19T07:54:11.476Z info akasdsfk
+2022-07-19T07:54:11.477Z info jfskdl
+2022-07-19T07:54:11.497Z info null
+2022-07-19T07:54:11.497Z info user not found
+2022-07-19T07:54:15.037Z info loginUser called
+2022-07-19T07:54:15.038Z info akash
+2022-07-19T07:54:15.038Z info jfskdl
+2022-07-19T07:54:15.057Z info [object SequelizeInstance:user]
+2022-07-19T07:54:15.057Z info user Found
+2022-07-19T07:54:15.058Z error data and hash arguments required
+2022-07-19T07:54:16.866Z info loginUser called
+2022-07-19T07:54:16.867Z info akash
+2022-07-19T07:54:16.867Z info jfskdl
+2022-07-19T07:54:16.881Z info [object SequelizeInstance:user]
+2022-07-19T07:54:16.881Z info user Found
+2022-07-19T07:54:16.882Z error data and hash arguments required
+2022-07-19T07:54:55.608Z info loginUser called
+2022-07-19T07:54:55.609Z info akash
+2022-07-19T07:54:55.609Z info jfskdl
+2022-07-19T07:54:55.623Z info [object SequelizeInstance:user]
+2022-07-19T07:54:56.372Z info loginUser called
+2022-07-19T07:54:56.373Z info akash
+2022-07-19T07:54:56.374Z info jfskdl
+2022-07-19T07:54:56.386Z info [object SequelizeInstance:user]
+2022-07-19T07:55:21.782Z info loginUser called
+2022-07-19T07:55:21.784Z info adsf
+2022-07-19T07:55:21.784Z info jfskld
+2022-07-19T07:55:21.797Z info null
+2022-07-19T07:55:21.797Z info user not found
+2022-07-19T07:55:28.159Z info loginUser called
+2022-07-19T07:55:28.160Z info akash
+2022-07-19T07:55:28.160Z info jfskld
+2022-07-19T07:55:28.171Z info [object SequelizeInstance:user]
+2022-07-19T07:55:28.171Z info user Found
+2022-07-19T07:55:28.171Z error Cannot read property 'password' of undefined
+2022-07-19T07:55:29.527Z info loginUser called
+2022-07-19T07:55:29.528Z info akash
+2022-07-19T07:55:29.528Z info jfskld
+2022-07-19T07:55:29.540Z info [object SequelizeInstance:user]
+2022-07-19T07:55:29.541Z info user Found
+2022-07-19T07:55:29.542Z error Cannot read property 'password' of undefined
+2022-07-19T07:55:45.703Z info loginUser called
+2022-07-19T07:55:45.705Z info akash
+2022-07-19T07:55:45.705Z info jfskld
+2022-07-19T07:55:45.718Z info [object SequelizeInstance:user]
+2022-07-19T07:55:45.718Z info user Found
+2022-07-19T07:56:00.175Z info loginUser called
+2022-07-19T07:56:00.177Z info akash
+2022-07-19T07:56:00.177Z info jfskld
+2022-07-19T07:56:00.190Z info [object SequelizeInstance:user]
+2022-07-19T07:56:00.190Z info user Found
+2022-07-19T07:56:32.012Z info loginUser called
+2022-07-19T07:56:32.015Z info akash
+2022-07-19T07:56:32.015Z info djsl
+2022-07-19T07:56:32.029Z info [object SequelizeInstance:user]
+2022-07-19T07:56:32.029Z info user Found
+2022-07-19T07:56:32.029Z error data is not defined
+2022-07-19T07:56:33.341Z info loginUser called
+2022-07-19T07:56:33.341Z info akash
+2022-07-19T07:56:33.342Z info djsl
+2022-07-19T07:56:33.353Z info [object SequelizeInstance:user]
+2022-07-19T07:56:33.353Z info user Found
+2022-07-19T07:56:33.353Z error data is not defined
+2022-07-19T07:57:52.691Z info loginUser called
+2022-07-19T07:57:52.693Z info akash
+2022-07-19T07:57:52.693Z info fsdlkj
+2022-07-19T07:57:52.706Z info [object Object]
+2022-07-19T07:57:52.706Z info user Found
+2022-07-19T07:58:15.929Z info loginUser called
+2022-07-19T07:58:15.931Z info akash
+2022-07-19T07:58:15.931Z info fsdlkj
+2022-07-19T07:58:15.938Z info [object Object]
+2022-07-19T07:58:15.938Z info user Found
+2022-07-19T07:59:46.015Z info loginUser called
+2022-07-19T07:59:46.017Z info akash
+2022-07-19T07:59:46.017Z info jfkld
+2022-07-19T07:59:46.029Z info [object Object]
+2022-07-19T07:59:46.030Z info user Found
+2022-07-19T08:00:06.175Z info loginUser called
+2022-07-19T08:00:06.177Z info akash
+2022-07-19T08:00:06.177Z info dsklj
+2022-07-19T08:00:06.189Z info [object Object]
+2022-07-19T08:00:06.189Z info user Found
+2022-07-19T08:00:06.192Z error reply interface called twice
+2022-07-19T08:00:34.045Z info loginUser called
+2022-07-19T08:00:34.047Z info akash
+2022-07-19T08:00:34.047Z info fsdlkj
+2022-07-19T08:00:34.057Z info [object Object]
+2022-07-19T08:00:34.057Z info user Found
+2022-07-19T08:00:34.058Z error Cannot read property 'password' of undefined
+2022-07-19T08:00:36.042Z info loginUser called
+2022-07-19T08:00:36.043Z info akash
+2022-07-19T08:00:36.043Z info fsdlkj
+2022-07-19T08:00:36.055Z info [object Object]
+2022-07-19T08:00:36.056Z info user Found
+2022-07-19T08:00:36.056Z error Cannot read property 'password' of undefined
+2022-07-19T08:01:17.281Z info loginUser called
+2022-07-19T08:01:17.284Z info akash
+2022-07-19T08:01:17.284Z info fdk
+2022-07-19T08:01:17.298Z info [object SequelizeInstance:user]
+2022-07-19T08:01:17.298Z info user Found
+2022-07-19T08:01:17.298Z error Unexpected token o in JSON at position 1
+2022-07-19T08:01:34.011Z info loginUser called
+2022-07-19T08:01:34.012Z info akash
+2022-07-19T08:01:34.012Z info fdslkj
+2022-07-19T08:01:34.018Z info [object SequelizeInstance:user]
+2022-07-19T08:01:34.018Z info user Found
+2022-07-19T08:01:34.018Z error Unexpected token o in JSON at position 1
+2022-07-19T08:01:35.367Z info loginUser called
+2022-07-19T08:01:35.367Z info akash
+2022-07-19T08:01:35.368Z info fdslkj
+2022-07-19T08:01:35.377Z info [object SequelizeInstance:user]
+2022-07-19T08:01:35.378Z info user Found
+2022-07-19T08:01:35.378Z error Unexpected token o in JSON at position 1
+2022-07-19T08:01:56.183Z info loginUser called
+2022-07-19T08:01:56.185Z info akash
+2022-07-19T08:01:56.185Z info jflkds
+2022-07-19T08:01:56.193Z info [object SequelizeInstance:user]
+2022-07-19T08:01:56.194Z info user Found
+2022-07-19T08:02:19.910Z info loginUser called
+2022-07-19T08:02:19.911Z info akash
+2022-07-19T08:02:19.911Z info fdsjl
+2022-07-19T08:02:19.923Z info [object SequelizeInstance:user]
+2022-07-19T08:02:19.923Z info user Found
+2022-07-19T08:02:19.925Z error Cannot read property 'password' of undefined
+2022-07-19T08:03:32.731Z info loginUser called
+2022-07-19T08:03:32.734Z info akash
+2022-07-19T08:03:32.734Z info fdsjlt
+2022-07-19T08:03:32.744Z info [object SequelizeInstance:user]
+2022-07-19T08:03:32.744Z info user Found
+2022-07-19T08:04:07.415Z info loginUser called
+2022-07-19T08:04:07.416Z info akash
+2022-07-19T08:04:07.416Z info jfdkls
+2022-07-19T08:04:07.425Z info [object SequelizeInstance:user]
+2022-07-19T08:04:07.426Z info user Found
+2022-07-19T08:04:48.607Z info loginUser called
+2022-07-19T08:04:48.609Z info akash
+2022-07-19T08:04:48.609Z info fsdlkj
+2022-07-19T08:04:48.620Z info [object SequelizeInstance:user]
+2022-07-19T08:04:48.621Z info user Found
+2022-07-19T08:07:01.218Z info loginUser called
+2022-07-19T08:07:01.220Z info akash
+2022-07-19T08:07:01.220Z info fslkj
+2022-07-19T08:07:01.230Z info [object SequelizeInstance:user]
+2022-07-19T08:07:01.230Z info user Found
+2022-07-19T08:36:02.075Z info loginUser called
+2022-07-19T08:36:02.077Z info akash
+2022-07-19T08:36:02.077Z info fslkj
+2022-07-19T08:36:02.090Z info [object SequelizeInstance:user]
+2022-07-19T08:36:02.090Z info user Found
+2022-07-19T08:36:26.433Z info loginUser called
+2022-07-19T08:36:26.435Z info akash
+2022-07-19T08:36:26.435Z info jdkl
+2022-07-19T08:36:26.448Z info [object SequelizeInstance:user]
+2022-07-19T08:36:26.449Z info user Found
+2022-07-19T08:36:51.045Z info loginUser called
+2022-07-19T08:36:51.047Z info akash
+2022-07-19T08:36:51.047Z info jdkl
+2022-07-19T08:36:51.062Z info [object SequelizeInstance:user]
+2022-07-19T08:36:51.062Z info user Found
+2022-07-19T08:37:17.603Z info loginUser called
+2022-07-19T08:37:17.605Z info akash
+2022-07-19T08:37:17.605Z info jdkl
+2022-07-19T08:37:17.620Z info [object SequelizeInstance:user]
+2022-07-19T08:37:17.620Z info user Found
+2022-07-19T08:37:24.560Z info loginUser called
+2022-07-19T08:37:24.561Z info akash
+2022-07-19T08:37:24.561Z info akash
+2022-07-19T08:37:24.572Z info [object SequelizeInstance:user]
+2022-07-19T08:37:24.572Z info user Found
+2022-07-19T08:38:30.713Z info loginUser called
+2022-07-19T08:38:30.715Z info akash
+2022-07-19T08:38:30.715Z info akash
+2022-07-19T08:38:30.724Z info [object SequelizeInstance:user]
+2022-07-19T08:38:30.724Z info user Found
+2022-07-19T08:38:31.011Z info true
+2022-07-19T08:49:06.692Z info loginUser called
+2022-07-19T08:49:06.694Z info akash
+2022-07-19T08:49:06.694Z info akash
+2022-07-19T08:49:06.718Z info [object SequelizeInstance:user]
+2022-07-19T08:49:06.719Z info user Found
+2022-07-19T08:49:06.996Z info true
+2022-07-19T08:49:06.998Z info passwords match successful login
+2022-07-19T08:59:02.674Z info loginUser called
+2022-07-19T08:59:02.677Z info akash123
+2022-07-19T08:59:02.677Z info akash
+2022-07-19T08:59:02.704Z info [object SequelizeInstance:user]
+2022-07-19T08:59:02.705Z info user Found
+2022-07-19T08:59:02.978Z info false
+2022-07-19T08:59:07.476Z info loginUser called
+2022-07-19T08:59:07.478Z info akash123
+2022-07-19T08:59:07.478Z info akash
+2022-07-19T08:59:07.492Z info [object SequelizeInstance:user]
+2022-07-19T08:59:07.492Z info user Found
+2022-07-19T08:59:07.777Z info false
+2022-07-19T08:59:15.009Z info loginUser called
+2022-07-19T08:59:15.010Z info akash123
+2022-07-19T08:59:15.011Z info akash123
+2022-07-19T08:59:15.029Z info [object SequelizeInstance:user]
+2022-07-19T08:59:15.029Z info user Found
+2022-07-19T08:59:15.317Z info true
+2022-07-19T08:59:15.319Z info passwords match successful login
+2022-07-19T09:02:11.744Z info loginUser called
+2022-07-19T09:02:11.745Z info fsjlk
+2022-07-19T09:02:11.745Z info fkjs
+2022-07-19T09:02:11.774Z info null
+2022-07-19T09:02:11.775Z info user not found
+2022-07-19T09:02:17.453Z info loginUser called
+2022-07-19T09:02:17.453Z info akash
+2022-07-19T09:02:17.454Z info kdsfjl
+2022-07-19T09:02:17.467Z info [object SequelizeInstance:user]
+2022-07-19T09:02:17.467Z info user Found
+2022-07-19T09:02:17.761Z info false
+2022-07-19T09:02:23.102Z info loginUser called
+2022-07-19T09:02:23.102Z info akash
+2022-07-19T09:02:23.103Z info akash
+2022-07-19T09:02:23.115Z info [object SequelizeInstance:user]
+2022-07-19T09:02:23.116Z info user Found
+2022-07-19T09:02:23.405Z info true
+2022-07-19T09:02:23.406Z info passwords match successful login
+2022-07-19T09:05:33.605Z info loginUser called
+2022-07-19T09:05:33.607Z info akashfsdf
+2022-07-19T09:05:33.607Z info akash
+2022-07-19T09:05:33.620Z info null
+2022-07-19T09:05:33.620Z info user not found
+2022-07-19T09:05:33.621Z error token is not defined
+2022-07-19T09:05:35.251Z info loginUser called
+2022-07-19T09:05:35.252Z info akashfsdf
+2022-07-19T09:05:35.252Z info akash
+2022-07-19T09:05:35.266Z info null
+2022-07-19T09:05:35.267Z info user not found
+2022-07-19T09:05:35.267Z error token is not defined
+2022-07-19T09:05:35.875Z info loginUser called
+2022-07-19T09:05:35.879Z info akashfsdf
+2022-07-19T09:05:35.879Z info akash
+2022-07-19T09:05:35.888Z info null
+2022-07-19T09:05:35.888Z info user not found
+2022-07-19T09:05:35.888Z error token is not defined
+2022-07-19T09:05:36.154Z info loginUser called
+2022-07-19T09:05:36.155Z info akashfsdf
+2022-07-19T09:05:36.155Z info akash
+2022-07-19T09:05:36.165Z info null
+2022-07-19T09:05:36.165Z info user not found
+2022-07-19T09:05:36.165Z error token is not defined
+2022-07-19T09:06:03.111Z info loginUser called
+2022-07-19T09:06:03.112Z info akashfsdf
+2022-07-19T09:06:03.112Z info akash
+2022-07-19T09:06:03.119Z info null
+2022-07-19T09:06:03.119Z info user not found
+2022-07-19T09:06:03.119Z error token is not defined
+2022-07-19T09:06:49.904Z info loginUser called
+2022-07-19T09:06:49.905Z info akashfsdf
+2022-07-19T09:06:49.905Z info akash
+2022-07-19T09:06:49.912Z info null
+2022-07-19T09:06:49.912Z info user not found
+2022-07-19T09:06:58.120Z info loginUser called
+2022-07-19T09:06:58.120Z info akash
+2022-07-19T09:06:58.120Z info ksdfj
+2022-07-19T09:06:58.123Z info [object SequelizeInstance:user]
+2022-07-19T09:06:58.123Z info user Found
+2022-07-19T09:06:58.400Z info false
+2022-07-19T09:09:08.600Z info loginUser called
+2022-07-19T09:09:08.600Z info fsda
+2022-07-19T09:09:08.600Z info jfds
+2022-07-19T09:09:08.615Z info null
+2022-07-19T09:09:08.615Z info user not found
+2022-07-19T09:09:34.550Z info loginUser called
+2022-07-19T09:09:34.551Z info fsda
+2022-07-19T09:09:34.551Z info jfds
+2022-07-19T09:09:34.557Z info null
+2022-07-19T09:09:34.557Z info user not found
+2022-07-19T09:09:40.702Z info loginUser called
+2022-07-19T09:09:40.702Z info akash
+2022-07-19T09:09:40.702Z info jfds
+2022-07-19T09:09:40.708Z info [object SequelizeInstance:user]
+2022-07-19T09:09:40.708Z info user Found
+2022-07-19T09:09:40.984Z info false
+2022-07-19T09:09:49.571Z info loginUser called
+2022-07-19T09:09:49.571Z info akash
+2022-07-19T09:09:49.571Z info akash
+2022-07-19T09:09:49.574Z info [object SequelizeInstance:user]
+2022-07-19T09:09:49.574Z info user Found
+2022-07-19T09:09:49.851Z info true
+2022-07-19T09:09:49.853Z info passwords match successful login
+2022-07-19T09:10:14.976Z info loginUser called
+2022-07-19T09:10:14.976Z info akash
+2022-07-19T09:10:14.976Z info akash
+2022-07-19T09:10:14.992Z info [object SequelizeInstance:user]
+2022-07-19T09:10:14.992Z info user Found
+2022-07-19T09:10:15.267Z info true
+2022-07-19T09:10:15.267Z info passwords match successful login
+2022-07-19T09:10:34.158Z info loginUser called
+2022-07-19T09:10:34.158Z info sd
+2022-07-19T09:10:34.158Z info jfdskl
+2022-07-19T09:10:34.171Z info null
+2022-07-19T09:10:34.171Z info user not found
+2022-07-19T09:10:39.039Z info loginUser called
+2022-07-19T09:10:39.039Z info akash
+2022-07-19T09:10:39.039Z info akash
+2022-07-19T09:10:39.041Z info [object SequelizeInstance:user]
+2022-07-19T09:10:39.041Z info user Found
+2022-07-19T09:10:39.320Z info true
+2022-07-19T09:10:39.320Z info passwords match successful login
+2022-07-19T09:12:32.384Z info loginUser called
+2022-07-19T09:12:32.384Z info akash
+2022-07-19T09:12:32.384Z info jfsdkl
+2022-07-19T09:12:32.396Z info [object SequelizeInstance:user]
+2022-07-19T09:12:32.397Z info user Found
+2022-07-19T09:12:32.672Z info false
+2022-07-19T09:12:35.645Z info loginUser called
+2022-07-19T09:12:35.645Z info akash
+2022-07-19T09:12:35.645Z info akash
+2022-07-19T09:12:35.647Z info [object SequelizeInstance:user]
+2022-07-19T09:12:35.647Z info user Found
+2022-07-19T09:12:35.920Z info true
+2022-07-19T09:12:35.920Z info passwords match successful login
+2022-07-19T09:13:08.533Z info loginUser called
+2022-07-19T09:13:08.533Z info akash
+2022-07-19T09:13:08.533Z info akash
+2022-07-19T09:13:08.546Z info [object SequelizeInstance:user]
+2022-07-19T09:13:08.546Z info user Found
+2022-07-19T09:13:08.821Z info true
+2022-07-19T09:13:08.822Z info passwords match successful login
+2022-07-19T09:14:01.659Z info loginUser called
+2022-07-19T09:14:01.659Z info ak
+2022-07-19T09:14:01.659Z info jfd
+2022-07-19T09:14:01.671Z info [object SequelizeInstance:user]
+2022-07-19T09:14:01.671Z info user Found
+2022-07-19T09:14:01.672Z info false
+2022-07-19T09:14:04.429Z info loginUser called
+2022-07-19T09:14:04.429Z info akash
+2022-07-19T09:14:04.429Z info jsfdlk
+2022-07-19T09:14:04.431Z info [object SequelizeInstance:user]
+2022-07-19T09:14:04.431Z info user Found
+2022-07-19T09:14:04.703Z info false
+2022-07-19T09:14:07.227Z info loginUser called
+2022-07-19T09:14:07.227Z info akash
+2022-07-19T09:14:07.227Z info akash
+2022-07-19T09:14:07.230Z info [object SequelizeInstance:user]
+2022-07-19T09:14:07.230Z info user Found
+2022-07-19T09:14:07.505Z info true
+2022-07-19T09:14:07.505Z info passwords match successful login
+2022-07-19T09:22:58.237Z info loginUser called
+2022-07-19T09:22:58.238Z info sdfjk
+2022-07-19T09:22:58.238Z info fdskl
+2022-07-19T09:22:58.253Z info null
+2022-07-19T09:22:58.253Z info user not found
+2022-07-19T09:23:04.744Z info loginUser called
+2022-07-19T09:23:04.744Z info akash
+2022-07-19T09:23:04.744Z info fdskl
+2022-07-19T09:23:04.747Z info [object SequelizeInstance:user]
+2022-07-19T09:23:04.747Z info user Found
+2022-07-19T09:23:05.019Z info false
+2022-07-19T09:23:13.246Z info loginUser called
+2022-07-19T09:23:13.246Z info akash
+2022-07-19T09:23:13.246Z info akash
+2022-07-19T09:23:13.249Z info [object SequelizeInstance:user]
+2022-07-19T09:23:13.249Z info user Found
+2022-07-19T09:23:13.527Z info true
+2022-07-19T09:23:13.528Z info passwords match successful login
+2022-07-19T09:25:14.802Z info loginUser called
+2022-07-19T09:25:14.803Z info akash
+2022-07-19T09:25:14.803Z info akash
+2022-07-19T09:25:14.817Z info [object SequelizeInstance:user]
+2022-07-19T09:25:14.818Z info user Found
+2022-07-19T09:25:15.094Z info true
+2022-07-19T09:25:15.095Z info passwords match successful login
+2022-07-19T09:25:46.036Z info loginUser called
+2022-07-19T09:25:46.037Z info akash
+2022-07-19T09:25:46.037Z info akash
+2022-07-19T09:25:46.044Z info [object SequelizeInstance:user]
+2022-07-19T09:25:46.044Z info user Found
+2022-07-19T09:25:46.323Z info true
+2022-07-19T09:25:46.324Z info passwords match successful login
+2022-07-19T09:25:48.501Z info isUserAuthenticated called
+2022-07-19T09:26:04.149Z info isUserAuthenticated called
+2022-07-19T09:26:08.330Z info isUserAuthenticated called
+2022-07-19T09:26:08.481Z info isUserAuthenticated called
+2022-07-19T09:26:08.623Z info isUserAuthenticated called
+2022-07-19T09:26:27.388Z info loginUser called
+2022-07-19T09:26:27.388Z info akash
+2022-07-19T09:26:27.388Z info akash
+2022-07-19T09:26:27.402Z info [object SequelizeInstance:user]
+2022-07-19T09:26:27.402Z info user Found
+2022-07-19T09:26:27.678Z info true
+2022-07-19T09:26:27.679Z info passwords match successful login
+2022-07-19T09:29:16.070Z info loginUser called
+2022-07-19T09:29:16.071Z info akash
+2022-07-19T09:29:16.072Z info akash
+2022-07-19T09:29:16.078Z info [object SequelizeInstance:user]
+2022-07-19T09:29:16.079Z info user Found
+2022-07-19T09:29:16.354Z info true
+2022-07-19T09:29:16.356Z info passwords match successful login
+2022-07-19T09:30:20.753Z info loginUser called
+2022-07-19T09:30:20.753Z info akash
+2022-07-19T09:30:20.754Z info akash
+2022-07-19T09:30:20.760Z info [object SequelizeInstance:user]
+2022-07-19T09:30:20.761Z info user Found
+2022-07-19T09:30:21.037Z info true
+2022-07-19T09:30:21.039Z info passwords match successful login
+2022-07-19T09:30:26.534Z info loginUser called
+2022-07-19T09:30:26.534Z info akash
+2022-07-19T09:30:26.534Z info akash
+2022-07-19T09:30:26.536Z info [object SequelizeInstance:user]
+2022-07-19T09:30:26.536Z info user Found
+2022-07-19T09:30:26.811Z info true
+2022-07-19T09:30:26.812Z info passwords match successful login
+2022-07-19T09:30:27.632Z info isUserAuthenticated called
+2022-07-19T09:30:37.275Z info isUserAuthenticated called
+2022-07-19T09:32:16.283Z info loginUser called
+2022-07-19T09:32:16.283Z info akash
+2022-07-19T09:32:16.283Z info akash
+2022-07-19T09:32:16.297Z info [object SequelizeInstance:user]
+2022-07-19T09:32:16.298Z info user Found
+2022-07-19T09:32:16.574Z info true
+2022-07-19T09:32:16.574Z info passwords match successful login
+2022-07-19T09:32:17.311Z info isUserAuthenticated called
+2022-07-19T09:32:38.707Z info isUserAuthenticated called
+2022-07-19T09:32:48.931Z info isUserAuthenticated called
+2022-07-19T09:33:20.041Z info isUserAuthenticated called
+2022-07-19T09:33:27.855Z info isUserAuthenticated called
+2022-07-19T09:34:02.732Z info isUserAuthenticated called
+2022-07-19T09:36:59.048Z info loginUser called
+2022-07-19T09:36:59.049Z info akash
+2022-07-19T09:36:59.049Z info akash
+2022-07-19T09:36:59.064Z info [object SequelizeInstance:user]
+2022-07-19T09:36:59.064Z info user Found
+2022-07-19T09:36:59.338Z info true
+2022-07-19T09:36:59.339Z info passwords match successful login
+2022-07-19T09:37:00.868Z info isUserAuthenticated called
+2022-07-19T09:37:54.310Z info loginUser called
+2022-07-19T09:37:54.310Z info akash
+2022-07-19T09:37:54.311Z info akash
+2022-07-19T09:37:54.318Z info [object SequelizeInstance:user]
+2022-07-19T09:37:54.318Z info user Found
+2022-07-19T09:37:54.600Z info true
+2022-07-19T09:37:54.601Z info passwords match successful login
+2022-07-19T09:37:56.344Z info isUserAuthenticated called

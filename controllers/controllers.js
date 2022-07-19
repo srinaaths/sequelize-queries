@@ -1,6 +1,9 @@
 const { movie, user, actor, director, movie_actor, movie_genre, rating, genre, sequelize } = require('../models/models.js')
 const { Op } = require('sequelize')
 const logger = require('../logger/logger.js')
+const bcrypt = require('bcrypt')
+
+const jwt = require('jsonwebtoken')
 
 const { createClient } = require('redis');
 
@@ -493,12 +496,94 @@ const addDirector = async (req, reply) => {
 const addUser = async (req, reply) => {
     try {
         logger.info('addUser called')
-        const result = await user.create(req.payload)
+        const userData = req.payload;
+        const salt = await bcrypt.genSalt(12);
+        const hashedPass = await bcrypt.hash(userData.password, salt);
+        userData.password = hashedPass;
+        const result = await user.create(userData)
         logger.info('addUser success')
         reply('success')
     } catch (error) {
+        console.log(req.payload);
         logger.error('addUser failed')
+        logger.error(error.message)
         reply(error.message);
+    }
+}
+
+const verifyJWT = async (req, reply) => {
+    const token = req.headers['x-access-token']
+    if (!token) {
+        reply('we need a token')
+    }
+    else {
+        jwt.verify(token, 'jwtsecret', (err, decoded) => {
+            if (err) {
+                reply({
+                    auth: false,
+                    message: 'u failed to authenticate'
+                })
+            } else {
+                req.userId = decoded.id;
+                reply('success user id is ' + req.userId)
+            }
+        })
+    }
+}
+
+const isUserAuthenticated = async (req, reply) => {
+    logger.info('isUserAuthenticated called')
+    verifyJWT(req, reply);
+}
+
+const loginUser = async (req, reply) => {
+    const userData = req.payload;
+    logger.info('loginUser called')
+    logger.info(userData.name)
+    logger.info(userData.password)
+    try {
+        const result = await user.findOne(
+            {
+                where: {
+                    name: userData.name
+                },
+            }
+        )
+        logger.info(result)
+        if (result === null) {
+            logger.info('user not found');
+            reply({
+                auth: false,
+                message: 'no user exists'
+            })
+        }
+        else {
+            logger.info('user Found');
+            const passwordInDb = result.password;
+            console.log('pass in db is ' + passwordInDb);
+            const passwordMatch = await bcrypt.compare(userData.password, passwordInDb)
+            logger.info(passwordMatch)
+            if (passwordMatch) {
+                const id = result.id;
+                const token = jwt.sign({ id }, 'jwtsecret', {
+                    expiresIn: 300,
+                })
+                logger.info('passwords match successful login')
+                reply({
+                    auth: true,
+                    token: token,
+                    result: result
+                })
+            }
+            else {
+                reply({
+                    auth: false,
+                    message: 'wrong user password'
+                })
+            }
+        }
+    } catch (error) {
+        logger.error(error.message)
     }
 }
 
@@ -606,4 +691,4 @@ const updateRating = async (req, reply) => {
     }
 }
 
-module.exports = { getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating, getAllMoviesCached, getMovieById, getAllMoviesByPages, client }
+module.exports = { getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating, getAllMoviesCached, getMovieById, getAllMoviesByPages, client, loginUser , isUserAuthenticated}

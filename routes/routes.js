@@ -1,4 +1,4 @@
-const { getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating, getAllMoviesCached, getMovieById, getAllMoviesByPages } = require('../controllers/controllers.js')
+const { getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating, getAllMoviesCached, getMovieById, getAllMoviesByPages, loginUser, isUserAuthenticated } = require('../controllers/controllers.js')
 const { idValidator, nameValidator } = require('../validation.js')
 const pagination = require('hapi-pagination')
 
@@ -176,7 +176,29 @@ const logger = require('../logger/logger.js')
     {
         method: 'POST',
         path: '/adduser',
-        handler: addUser
+        handler: addUser,
+        config: {
+            cors: true
+        }
+    },
+    {
+        method: 'POST',
+        path: '/loginuser',
+        handler: loginUser,
+        config: {
+            cors: true
+        }
+    },
+    {
+        method: 'GET',
+        path: '/isuserauth',
+        handler: isUserAuthenticated,
+        config: {
+            cors: {
+                origin: ['*'],
+                additionalHeaders: ['x-access-token']
+            }
+        }
     },
     {
         method: 'POST',
