@@ -15,6 +15,15 @@ const connect = async () => await client.connect();
 
 connect();
 
+const getAllDirectors = async (req, reply) => {
+    try {
+        const res = await director.findAll();
+        reply(res);
+    } catch (error) {
+        logger.error(error.message)
+    }
+}
+
 const getAllMoviesByPages = async (req, reply) => {
     try {
         console.log(req.query.page);
@@ -101,7 +110,7 @@ const getCountByGenre = async (req, reply) => {
         //     },
         //     group: ['movie.name', 'genre.id']
         // })
-        c
+        // c
         reply(data)
         // const data = await genre.findAll({
         //     attributes: [[sequelize.fn('count', sequelize.col('')), 'counttt']],
@@ -174,7 +183,7 @@ const getMoviesByGenre = async (req, reply) => {
 
 const getMoviesByGenre2 = async (req, reply) => {
     try {
-        logger.info('getMoviesByDirector called')
+        logger.info('getMoviesByGenre called')
         const movieGenre = req.params.name;
         const cachedData = await client.get(`moviesByGenre-${movieGenre}`);
         if (cachedData) {
@@ -182,15 +191,16 @@ const getMoviesByGenre2 = async (req, reply) => {
             reply(JSON.parse(cachedData));
         }
         else {
+            logger.info('hitting')
             const data = await movie.findAll({
-                attributes: ['name'],
+                // attributes: ['name'],
                 include: {
                     model: genre,
+                    attributes: [],
                     where: {
                         name: req.params.name
                     },
-                    attributes: ['name']
-                }
+                },
             })
             client.setEx(`moviesByGenre-${movieGenre}`, 1200, JSON.stringify(data))
             logger.info('getMoviesByGenre succesful')
@@ -216,7 +226,6 @@ const getMoviesByDirector2 = async (req, reply) => {
         else {
             logger.info('cache miss')
             const data = await movie.findAll({
-                attributes: ['name'],
                 include: {
                     model: director,
                     attributes: [],
@@ -312,6 +321,42 @@ const worstRatedMovie2 = async (req, reply) => {
             const cacheData = await client.setEx('worstRatedMovie', 1200, JSON.stringify(result));
             logger.info('added to cache')
             logger.info('worstRatedMovie success')
+            reply(result)
+        }
+    }
+    catch (error) {
+        logger.error('worstRatedMovie failed')
+        reply(error.message);
+    }
+}
+
+const bestRatedMovie = async (req, reply) => {
+    try {
+        logger.info('bestRatedMovies called')
+        const cachedData = await client.get('bestRatedMovies')
+        if (cachedData) {
+            logger.info('cache hit')
+            reply(JSON.parse(cachedData))
+        }
+        else {
+            logger.info('cache miss')
+            const result = await rating.findAll({
+                attributes: ['movieId', [sequelize.fn('AVG', sequelize.col('rating')), 'avg_rating']],
+                include: {
+                    attributes: [],
+                    required: true,
+                    model: movie,
+                    // through: {
+                    //     attributes: ['name']
+                    // }
+                },
+                group: ['movieId'],
+                order: [[sequelize.fn('AVG', sequelize.col('rating')), 'DESC']],
+                limit: 5,
+            })
+            const cacheData = await client.setEx('bestRatedMovies', 1200, JSON.stringify(result));
+            logger.info('added to cache')
+            logger.info('bestRatedMovies success')
             reply(result)
         }
     }
@@ -519,6 +564,7 @@ const verifyJWT = async (req, reply) => {
     else {
         jwt.verify(token, 'jwtsecret', (err, decoded) => {
             if (err) {
+                console.log(err.message);
                 reply({
                     auth: false,
                     message: 'u failed to authenticate'
@@ -570,7 +616,7 @@ const loginUser = async (req, reply) => {
             if (passwordMatch) {
                 const id = result.id;
                 const token = jwt.sign({ id }, 'jwtsecret', {
-                    expiresIn: 300,
+                    expiresIn: 300
                 })
                 logger.info('passwords match successful login')
                 reply({
@@ -594,6 +640,13 @@ const loginUser = async (req, reply) => {
 const addRating = async (req, reply) => {
     try {
         logger.info('addRating called')
+        const findExisting = await rating.destroy({
+            where: {
+                movieId: req.payload.movieId,
+                userId: req.payload.userId,
+            }
+        }
+        )
         const data = await rating.create(req.payload);
         logger.info('addRating success')
         reply('rating added')
@@ -695,4 +748,4 @@ const updateRating = async (req, reply) => {
     }
 }
 
-module.exports = { getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating, getAllMoviesCached, getMovieById, getAllMoviesByPages, client, loginUser, isUserAuthenticated }
+module.exports = { getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating, getAllMoviesCached, getMovieById, getAllMoviesByPages, client, loginUser, isUserAuthenticated, getAllDirectors, bestRatedMovie }

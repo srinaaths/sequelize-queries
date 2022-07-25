@@ -1,4 +1,4 @@
-const { getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating, getAllMoviesCached, getMovieById, getAllMoviesByPages, loginUser, isUserAuthenticated } = require('../controllers/controllers.js')
+const { getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating, getAllMoviesCached, getMovieById, getAllMoviesByPages, loginUser, isUserAuthenticated ,getAllDirectors, bestRatedMovie} = require('../controllers/controllers.js')
 const { idValidator, nameValidator } = require('../validation.js')
 const pagination = require('hapi-pagination')
 
@@ -34,6 +34,10 @@ const logger = require('../logger/logger.js')
         method: 'GET',
         path: '/movies',
         handler: getAllMoviesByPages
+    },{
+        method: 'GET',
+        path: '/directors',
+        handler: getAllDirectors
     },
     {
         method: 'GET',
@@ -62,10 +66,11 @@ const logger = require('../logger/logger.js')
         method: 'GET',
         path: '/getMoviesByDirector/{name}',
         config: {
+            cors: true,
             handler: getMoviesByDirector2,
             validate: {
                 params: nameValidator
-            }
+            },
         }
     }, {
         method: 'GET',
@@ -74,6 +79,9 @@ const logger = require('../logger/logger.js')
             handler: getMoviesByGenre2,
             validate: {
                 params: nameValidator
+            },
+            cors: {
+                origin: ['*'],
             }
         }
     }, {
@@ -99,6 +107,11 @@ const logger = require('../logger/logger.js')
         path: '/worstRatedMovie',
         // handler: worstRatedMovie
         handler: worstRatedMovie2,
+    }, {
+        method: 'GET',
+        path: '/bestRatedMovie',
+        // handler: worstRatedMovie
+        handler: bestRatedMovie,
     }, {
         method: 'GET',
         path: '/allMoviesByActor/{name}',
