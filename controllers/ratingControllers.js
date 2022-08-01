@@ -2,6 +2,7 @@ const { movie, user, actor, director, movie_actor, movie_genre, rating, genre, s
 const { Op } = require('sequelize')
 const logger = require('../logger/logger.js')
 const bcrypt = require('bcrypt')
+const Boom = require('boom')
 
 const getRatingByUser = async (req, reply) => {
     console.log('hitting');
@@ -24,8 +25,23 @@ const sampleRoute = (req, reply) => {
     reply('hello')
 }
 
-const preSampleRoute = (req, reply) => {
-    reply('hello')
+const featuredMovie = async(req, reply) => {
+    try {
+        const res = await movie.findOne({
+            where: {
+                id: Math.ceil(Math.random() * 10)
+            }
+        })
+        reply(res);
+    }
+    catch(err) {
+        console.log(err);
+        reply(err)
+    }
 }
 
-module.exports = { getRatingByUser , sampleRoute, preSampleRoute}
+const preSampleRoute = (req, reply) => {
+    reply(Boom.badRequest('u are not allowed'))
+}
+
+module.exports = { getRatingByUser , sampleRoute, preSampleRoute, featuredMovie}

@@ -110,3 +110,79 @@
 2022-07-25T07:25:32.103Z error addRating error
 2022-07-25T07:27:11.701Z error addRating error
 2022-07-25T07:28:09.696Z error addRating error
+2022-07-25T13:10:09.041Z error addRating error
+2022-07-25T13:10:14.554Z error addRating error
+2022-07-25T13:14:16.370Z error worstRatedMovie failed
+2022-07-25T13:16:07.656Z error worstRatedMovie failed
+2022-07-25T13:18:57.433Z error addRating error
+2022-07-25T13:22:12.474Z error addRating error
+2022-07-25T13:22:16.614Z error addRating error
+2022-07-25T13:22:25.256Z error addRating error
+2022-07-25T13:22:30.036Z error addRating error
+2022-07-25T13:34:06.968Z error addUser failed
+2022-07-25T13:34:06.968Z error username already in use
+2022-07-25T16:36:04.417Z error addUser failed
+2022-07-25T16:36:04.417Z error username already in use
+2022-07-25T16:36:07.682Z error addUser failed
+2022-07-25T16:36:07.683Z error username already in use
+2022-07-26T10:00:11.373Z error worstRatedMovie failed
+2022-07-26T10:00:13.037Z error worstRatedMovie failed
+2022-07-26T10:00:13.977Z error worstRatedMovie failed
+2022-07-26T10:00:19.123Z error worstRatedMovie failed
+2022-07-26T10:00:20.111Z error worstRatedMovie failed
+2022-07-26T10:00:39.799Z error worstRatedMovie failed
+2022-07-26T10:00:53.751Z error worstRatedMovie failed
+2022-07-26T10:01:45.251Z error worstRatedMovie failed
+2022-07-26T10:01:46.285Z error worstRatedMovie failed
+2022-07-26T10:02:30.905Z error worstRatedMovie failed
+2022-07-26T10:03:28.288Z error worstRatedMovie failed
+2022-07-26T10:04:22.343Z error worstRatedMovie failed
+2022-07-26T10:05:02.286Z error worstRatedMovie failed
+2022-07-26T10:10:37.786Z error worstRatedMovie failed
+2022-07-26T10:10:44.915Z error worstRatedMovie failed
+2022-07-26T10:10:49.699Z error worstRatedMovie failed
+2022-07-31T15:32:48.491Z error addUser failed
+2022-07-31T15:32:48.492Z error username already in use
+2022-07-31T15:50:20.639Z error addUser failed
+2022-07-31T15:50:20.639Z error notNull Violation: user.name cannot be null
+2022-07-31T15:50:26.612Z error addUser failed
+2022-07-31T15:50:26.612Z error notNull Violation: user.name cannot be null
+2022-07-31T15:50:31.159Z error addUser failed
+2022-07-31T15:50:31.159Z error username already in use
+2022-07-31T15:51:27.335Z error addUser failed
+2022-07-31T15:51:27.335Z error username already in use
+2022-07-31T15:53:31.976Z error addUser failed
+2022-07-31T15:53:31.976Z error username already in use2022-07-31T18:37:34.679Z error addUser failed
+2022-07-31T18:37:34.679Z error username already in use
+2022-07-31T18:39:01.461Z error addUser failed
+2022-07-31T18:39:01.461Z error username already in use
+2022-07-31T18:41:13.594Z error addUser failed
+2022-07-31T18:41:13.595Z error username already in use
+2022-07-31T18:42:35.130Z error addUser failed
+2022-07-31T18:42:35.130Z error username already in use
+2022-07-31T18:51:56.595Z error addUser failed
+2022-07-31T18:51:56.595Z error username already in use
+2022-07-31T18:53:17.520Z error addUser failed
+2022-07-31T18:53:17.520Z error username already in use
+2022-07-31T19:05:07.960Z error addUser failed
+2022-07-31T19:05:07.960Z error alert is not defined
+2022-07-31T19:05:09.672Z error addUser failed
+2022-07-31T19:05:09.672Z error username already in use
+2022-07-31T19:05:16.931Z error addUser failed
+2022-07-31T19:05:16.931Z error alert is not defined
+2022-07-31T19:05:22.505Z error addUser failed
+2022-07-31T19:05:22.505Z error alert is not defined
+2022-07-31T19:05:38.230Z error addUser failed
+2022-07-31T19:05:38.230Z error alert is not defined
+2022-07-31T19:06:11.059Z error addUser failed
+2022-07-31T19:06:11.059Z error username already in use
+2022-07-31T19:06:23.564Z error addUser failed
+2022-07-31T19:06:23.564Z error alert is not defined
+2022-07-31T19:06:28.140Z error addUser failed
+2022-07-31T19:06:28.140Z error alert is not defined
+2022-07-31T19:06:31.836Z error addUser failed
+2022-07-31T19:06:31.837Z error alert is not defined
+2022-07-31T19:06:41.802Z error addUser failed
+2022-07-31T19:06:41.802Z error alert is not defined
+2022-07-31T19:07:23.326Z error addUser failed
+2022-07-31T19:07:23.326Z error username already in use

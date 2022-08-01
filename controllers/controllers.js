@@ -2,6 +2,7 @@ const { movie, user, actor, director, movie_actor, movie_genre, rating, genre, s
 const { Op } = require('sequelize')
 const logger = require('../logger/logger.js')
 const bcrypt = require('bcrypt')
+const nodemailer = require('nodemailer')
 
 const jwt = require('jsonwebtoken')
 
@@ -14,6 +15,11 @@ client.on('error', (err) => console.log('Redis Client Error', err));
 const connect = async () => await client.connect();
 
 connect();
+
+const transporter = nodemailer.createTransport({
+    host: 'localhost',
+    port: 1025
+})
 
 const getAllDirectors = async (req, reply) => {
     try {
@@ -538,24 +544,6 @@ const addDirector = async (req, reply) => {
     }
 }
 
-const addUser = async (req, reply) => {
-    try {
-        logger.info('addUser called')
-        const userData = req.payload;
-        const salt = await bcrypt.genSalt(12);
-        const hashedPass = await bcrypt.hash(userData.password, salt);
-        userData.password = hashedPass;
-        const result = await user.create(userData)
-        logger.info('addUser success')
-        reply('success')
-    } catch (error) {
-        console.log(req.payload);
-        logger.error('addUser failed')
-        logger.error(error.message)
-        reply(error.message);
-    }
-}
-
 const verifyJWT = async (req, reply) => {
     const token = req.headers['x-access-token']
     if (!token) {
@@ -616,7 +604,7 @@ const loginUser = async (req, reply) => {
             if (passwordMatch) {
                 const id = result.id;
                 const token = jwt.sign({ id }, 'jwtsecret', {
-                    expiresIn: 300
+                    expiresIn: 3000
                 })
                 logger.info('passwords match successful login')
                 reply({
@@ -748,4 +736,4 @@ const updateRating = async (req, reply) => {
     }
 }
 
-module.exports = { getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating, getAllMoviesCached, getMovieById, getAllMoviesByPages, client, loginUser, isUserAuthenticated, getAllDirectors, bestRatedMovie }
+module.exports = { getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating, getAllMoviesCached, getMovieById, getAllMoviesByPages, client, loginUser, isUserAuthenticated, getAllDirectors, bestRatedMovie }

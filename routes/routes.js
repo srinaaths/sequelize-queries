@@ -1,16 +1,11 @@
-const { getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addUser, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating, getAllMoviesCached, getMovieById, getAllMoviesByPages, loginUser, isUserAuthenticated ,getAllDirectors, bestRatedMovie} = require('../controllers/controllers.js')
+const { getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating, getAllMoviesCached, getMovieById, getAllMoviesByPages, loginUser, isUserAuthenticated ,getAllDirectors, bestRatedMovie} = require('../controllers/controllers.js')
+const {addUser} = require('../controllers/UserRoute.js')
 const { idValidator, nameValidator } = require('../validation.js')
 const pagination = require('hapi-pagination')
 
 const server = require('../index.js')
 
 const logger = require('../logger/logger.js')
-
-// server.register({
-//     register: require('hapi-pagination') }, 
-//     (err) => {
-//         if(err)
-//             console.log(err);
 
     module.exports = [{
         method: 'GET',
@@ -34,7 +29,8 @@ const logger = require('../logger/logger.js')
         method: 'GET',
         path: '/movies',
         handler: getAllMoviesByPages
-    },{
+    },
+    {
         method: 'GET',
         path: '/directors',
         handler: getAllDirectors

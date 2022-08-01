@@ -4,6 +4,7 @@ const Hapi = require('hapi')
 
 const routes = require('./routes/routes.js')
 const ratingRoutes = require('./routes/ratingRoutes.js')
+const mailRoutes= require('./routes/mailRoutes.js')
 
 const server = new Hapi.Server()
 
@@ -34,5 +35,6 @@ server.ext('onPreResponse', corsHeaders)
 
 server.route(routes);
 server.route(ratingRoutes);
+server.route(mailRoutes);
 
 module.exports = server;
