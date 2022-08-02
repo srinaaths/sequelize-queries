@@ -4,6 +4,12 @@ const logger = require('../logger/logger.js')
 const bcrypt = require('bcrypt')
 const nodemailer = require('nodemailer')
 
+const { Client } = require('@elastic/elasticsearch')
+
+const elasticClient = new Client({
+    node: 'http://localhost:9200',
+})
+
 const jwt = require('jsonwebtoken')
 
 const { createClient } = require('redis');
@@ -466,6 +472,48 @@ const addMovie = async (req, reply) => {
     }
 }
 
+const createMovieEs = async (req, reply) => {
+    try {
+        const result = await elasticClient.index({
+            index: "movies",
+            document: {
+                name: req.payload.name,
+                directorId: req.payload.directorId, 
+            }
+        })
+        reply(result)
+    } catch (error) {
+        logger.error('addMovie failed')
+        reply(error.message);
+        console.log(error);
+    }
+}
+const deleteMovieEs = async (req, reply) => {
+    try {
+        const result = await elasticClient.delete({
+            index: "movies",
+            id: req.params.id
+          });
+          reply(result);
+    } catch (error) {
+        logger.error('addMovie failed')
+        reply(error.message);
+        console.log(error);
+    }
+}
+const searchMovieEs = async (req, reply) => {
+    try {
+        const result = await elasticClient.search({
+            index: "movies",
+            query: { fuzzy: { name: req.params.name } },
+          });
+          reply(result)
+    } catch (error) {
+        logger.error('addMovies failed')
+        reply(error.message);
+    }
+}
+
 const addMovies = async (req, reply) => {
     try {
         logger.info('addMovies called')
@@ -473,6 +521,18 @@ const addMovies = async (req, reply) => {
         const data = await movie.bulkCreate(req.payload);
         logger.info('addMovies success')
         reply('success')
+    } catch (error) {
+        logger.error('addMovies failed')
+        reply(error.message);
+    }
+}
+const getMoviesEs = async (req, reply) => {
+    try {
+        const result = await elasticClient.search({
+            index: "movies",
+            query: { match_all: {} },
+          });
+          reply(result)
     } catch (error) {
         logger.error('addMovies failed')
         reply(error.message);
@@ -736,4 +796,4 @@ const updateRating = async (req, reply) => {
     }
 }
 
-module.exports = { getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating, getAllMoviesCached, getMovieById, getAllMoviesByPages, client, loginUser, isUserAuthenticated, getAllDirectors, bestRatedMovie }
+module.exports = { createMovieEs, deleteMovieEs, getMoviesEs, searchMovieEs, getAllMovies, getCountByGenre, sample, q10, getMoviesByDirector2, getMoviesByGenre, bestReviewByMovie, addRating, addActor, addDirector, addMovie, addMovies, getMoviesByGenre2, hitMoviesByActor, worstRatedMovie2, allMoviesByActor, movieCast, moviesCountByDirectorByGenre, directorFlops, deleteMovie, updateMovie, addMovieGenre, addMovieActor, deleteActor, deleteRating, updateRating, getAllMoviesCached, getMovieById, getAllMoviesByPages, client, loginUser, isUserAuthenticated, getAllDirectors, bestRatedMovie }

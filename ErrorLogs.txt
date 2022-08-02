@@ -186,3 +186,5 @@
 2022-07-31T19:06:41.802Z error alert is not defined
 2022-07-31T19:07:23.326Z error addUser failed
 2022-07-31T19:07:23.326Z error username already in use
+2022-08-02T03:35:43.559Z error addMovie failed
+2022-08-02T04:05:03.701Z error addMovie failed

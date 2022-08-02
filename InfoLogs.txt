@@ -26327,3 +26327,49 @@
 2022-08-01T05:54:14.525Z info got all movies
 2022-08-01T05:59:13.681Z info addUser called
 2022-08-01T05:59:13.961Z info addUser success
+2022-08-01T16:16:44.033Z info loginUser called
+2022-08-01T16:16:44.035Z info hello123
+2022-08-01T16:16:44.035Z info hello123
+2022-08-01T16:16:44.046Z info [object SequelizeInstance:user]
+2022-08-01T16:16:44.046Z info user Found
+2022-08-01T16:16:44.318Z info true
+2022-08-01T16:16:44.320Z info passwords match successful login
+2022-08-01T16:16:44.368Z info isUserAuthenticated called
+2022-08-01T16:16:44.467Z info isUserAuthenticated called
+2022-08-01T16:16:44.478Z info isUserAuthenticated called
+2022-08-01T16:16:50.979Z info got all movies
+2022-08-01T16:17:07.316Z info isUserAuthenticated called
+2022-08-01T16:17:07.336Z info isUserAuthenticated called
+2022-08-01T16:17:07.343Z info got all movies
+2022-08-01T16:17:11.063Z info isUserAuthenticated called
+2022-08-01T16:17:11.081Z info isUserAuthenticated called
+2022-08-01T16:17:15.709Z info addRating called
+2022-08-01T16:17:15.734Z info addRating success
+2022-08-01T16:17:18.014Z info isUserAuthenticated called
+2022-08-01T16:17:18.042Z info isUserAuthenticated called
+2022-08-01T16:17:18.050Z info got all movies
+2022-08-01T16:17:58.642Z info getMoviesByDirector called
+2022-08-01T16:17:58.646Z info cache miss
+2022-08-01T16:17:58.658Z info cached
+2022-08-01T16:17:58.659Z info getMoviesByDirector success
+2022-08-01T16:18:00.193Z info getMoviesByDirector called
+2022-08-01T16:18:00.199Z info cache miss
+2022-08-01T16:18:00.215Z info cached
+2022-08-01T16:18:00.215Z info getMoviesByDirector success
+2022-08-01T16:18:02.139Z info getMoviesByDirector called
+2022-08-01T16:18:02.139Z info cache miss
+2022-08-01T16:18:02.142Z info cached
+2022-08-01T16:18:02.143Z info getMoviesByDirector success
+2022-08-01T16:18:06.014Z info getMoviesByDirector called
+2022-08-01T16:18:06.021Z info cache miss
+2022-08-01T16:18:06.038Z info cached
+2022-08-01T16:18:06.039Z info getMoviesByDirector success
+2022-08-01T16:18:07.584Z info got all movies
+2022-08-01T16:18:09.716Z info isUserAuthenticated called
+2022-08-01T16:23:22.293Z info isUserAuthenticated called
+2022-08-02T03:33:13.206Z info addMovie called
+2022-08-02T03:33:13.210Z info before create
+2022-08-02T03:33:13.239Z info after create
+2022-08-02T03:33:13.240Z info addMovie success
+2022-08-02T03:35:43.559Z error addMovie failed
+2022-08-02T04:05:03.701Z error addMovie failed
