@@ -12,7 +12,8 @@ const verifyJWT = async (req, reply) => {
                     auth: false,
                     message: 'u failed to authenticate'
                 })
-            } else {
+            } else 
+            {
                 req.userId = decoded.id;
                 reply({
                     userId: decoded.id,
