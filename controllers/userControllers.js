@@ -15,6 +15,7 @@ const verifyJWT = async (req, reply) => {
             } else 
             {
                 req.userId = decoded.id;
+                
                 reply({
                     userId: decoded.id,
                     isAuthenticated: true,
